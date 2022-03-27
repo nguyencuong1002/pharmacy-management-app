@@ -11,6 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringDef;
 
 public class MyDatabase extends SQLiteOpenHelper {
+
+    public static final String DB_NAME = "qlnhathuoc.sqlite";
+
     public MyDatabase(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

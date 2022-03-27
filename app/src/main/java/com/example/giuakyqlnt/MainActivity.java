@@ -6,7 +6,9 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
+import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ActivityNhaThuoc.class));
+            }
+        });
+
+        cvHoaDon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ActivityHoaDon.class));
             }
         });
 
