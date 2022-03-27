@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GiuaKyQLNT">
         <activity
+            android:name=".HoaDon.EditHoaDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HoaDon.AddHoaDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HoaDon.ActivityHoaDon"
+            android:exported="false" />
+        <activity
             android:name=".NhaThuoc.EditNhaThuocActivity"
             android:exported="false" />
         <activity
