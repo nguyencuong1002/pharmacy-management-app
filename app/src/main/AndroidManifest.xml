@@ -28,6 +28,24 @@
             android:name=".NhaThuoc.ActivityNhaThuoc"
             android:exported="false" />
         <activity
+            android:name=".Thuoc.EditThuocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Thuoc.AddThuocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Thuoc.ActivityThuoc"
+            android:exported="false" />
+        <activity
+            android:name=".ChiTietBanLe.EditChiTietBanLeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChiTietBanLe.AddChiTietBanLeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChiTietBanLe.ActivityChiTietBanLe"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
