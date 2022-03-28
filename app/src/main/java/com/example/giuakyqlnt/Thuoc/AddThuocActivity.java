@@ -25,7 +25,7 @@ public class AddThuocActivity extends AppCompatActivity {
         String MATHUOC = txtMATHUOC.getText().toString();
         String TENTHUOC = txtTENTHUOC.getText().toString();
         String DVT = txtDVT.getText().toString();
-        String DONGIA = txtDONGIA.getText().toString();
+        Float DONGIA = Float.parseFloat(txtDONGIA.getText().toString());
         //Add dữ liệu
         ContentValues values = new ContentValues();
         values.put(ActivityThuoc.MATHUOC_FIELD, MATHUOC);

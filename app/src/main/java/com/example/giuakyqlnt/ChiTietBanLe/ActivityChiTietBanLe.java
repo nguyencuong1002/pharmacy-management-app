@@ -48,7 +48,7 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
 
     public void loadData() {
         list = getAll();
-        chiTietBanLeAdapter = new ChiTietBanLeAdapter(com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe.this, R.layout.dong_chi_tiet_ban_le, list);
+        chiTietBanLeAdapter = new ChiTietBanLeAdapter(ActivityChiTietBanLe.this, R.layout.dong_chi_tiet_ban_le, list);
         lvChiTietBanLe.setAdapter(chiTietBanLeAdapter);
     }
 

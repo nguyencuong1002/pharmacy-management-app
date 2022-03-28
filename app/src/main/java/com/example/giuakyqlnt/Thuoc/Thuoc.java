@@ -6,12 +6,12 @@ public class Thuoc implements Serializable {
     private String MATHUOC;
     private String TENTHUOC;
     private String DVT;
-    private String DONGIA;
+    private Float DONGIA;
 
     public Thuoc() {
     }
 
-    public Thuoc(String MATHUOC, String TENTHUOC, String DVT, String DONGIA) {
+    public Thuoc(String MATHUOC, String TENTHUOC, String DVT, Float DONGIA) {
         this.MATHUOC = MATHUOC;
         this.TENTHUOC = TENTHUOC;
         this.DVT = DVT;
@@ -34,9 +34,9 @@ public class Thuoc implements Serializable {
 
     public void setDVT(String DVT) { this.DVT = DVT; }
 
-    public String getDONGIA() { return DONGIA; }
+    public Float getDONGIA() { return DONGIA; }
 
-    public void setDONGIA(String DONGIA) { this.DONGIA = DONGIA; }
+    public void setDONGIA(Float DONGIA) { this.DONGIA = DONGIA; }
 
     @Override
     public String toString() {

@@ -39,7 +39,7 @@ public class ActivityThuoc extends AppCompatActivity {
         mapping();
 
         myDatabase = new MyDatabase(ActivityThuoc.this, DB_NAME, null, 1);
-        String sql_create_table = "create table if not exists "+TABLE_NAME+" ("+MATHUOC_FIELD+" varchar(10) primary key , "+TENTHUOC_FIELD+" nvarchar(50), "+DVT_FIELD+" nvarchar(50), "+DONGIA_FIELD+" int)";
+        String sql_create_table = "create table if not exists "+TABLE_NAME+" ("+MATHUOC_FIELD+" varchar(10) primary key , "+TENTHUOC_FIELD+" nvarchar(50), "+DVT_FIELD+" nvarchar(50), "+DONGIA_FIELD+" float)";
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
         loadData();
@@ -75,7 +75,7 @@ public class ActivityThuoc extends AppCompatActivity {
             String MATHUOC = c.getString(0);
             String TENTHUOC = c.getString(1);
             String DVT = c.getString(2);
-            String DONGIA = c.getString(3);
+            Float DONGIA = c.getFloat(3);
 
             Thuoc Thuoc = new Thuoc(MATHUOC, TENTHUOC, DVT, DONGIA);
             list.add(Thuoc);

@@ -28,7 +28,7 @@ public class EditThuocActivity extends AppCompatActivity {
         //txtBookID.setEnabled(false);
         txtTENTHUOC.setText(Thuoc.getTENTHUOC());
         txtDVT.setText(Thuoc.getDVT());
-        txtDONGIA.setText(Thuoc.getDONGIA());
+        txtDONGIA.setText(String.valueOf(Thuoc.getDONGIA()));
     }
 
     public void save(View view){

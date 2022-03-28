@@ -64,9 +64,9 @@ public class NhaThuocAdapter extends BaseAdapter {
         }
 
         NhaThuoc nhaThuoc = listNhaThuoc.get(i);
-        holder.tvMaNT.setText(String.valueOf(nhaThuoc.getMaNT()));
+        holder.tvMaNT.setText(nhaThuoc.getMaNT());
         holder.tvTenNT.setText(nhaThuoc.getTenNT());
-        holder.tvDiaChi.setText(String.valueOf(nhaThuoc.getDiaChi()));
+        holder.tvDiaChi.setText(nhaThuoc.getDiaChi());
         //bắt sự kiện
         holder.ivEdit.setOnClickListener(new View.OnClickListener() {
             @Override
