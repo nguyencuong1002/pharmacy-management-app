@@ -31,7 +31,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ActivityHoaDon.class));
             }
         });
-
+        cvThuoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ActivityThuoc.class));
+            }
+        });
+        cvBanThuoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ActivityChiTietBanLe.class));
+            }
+        });
 
     }
 
