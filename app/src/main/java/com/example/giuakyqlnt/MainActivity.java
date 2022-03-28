@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
+import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 
 public class MainActivity extends AppCompatActivity {
     CardView cvNhaThuoc, cvThuoc, cvHoaDon, cvBanThuoc;
