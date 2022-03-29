@@ -17,6 +17,8 @@ import com.example.giuakyqlnt.R;
 public class AddHoaDonActivity extends AppCompatActivity {
     EditText txtSoHD, txtNgayHD, txtMaNT;
     Button btnAdd, btnCancel;
+    boolean isAllFieldsChecked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +30,38 @@ public class AddHoaDonActivity extends AppCompatActivity {
         String soHD = txtSoHD.getText().toString();
         String ngayHD = txtNgayHD.getText().toString();
         String maNT = txtMaNT.getText().toString();
-        //Add dữ liệu
-        ContentValues values = new ContentValues();
-        values.put(ActivityHoaDon.SoHD_FIELD, soHD);
-        values.put(ActivityHoaDon.NgayHD_FIELD, ngayHD);
-        values.put(ActivityHoaDon.MaNT_FIELD, maNT);
-        ActivityHoaDon.myDatabase.insert(ActivityHoaDon.TABLE_NAME, null,values);
-        startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
+        //Check data
+        isAllFieldsChecked = CheckAllFields();
+        if (isAllFieldsChecked) {
+            //Add dữ liệu
+            ContentValues values = new ContentValues();
+            values.put(ActivityHoaDon.SoHD_FIELD, soHD);
+            values.put(ActivityHoaDon.NgayHD_FIELD, ngayHD);
+            values.put(ActivityHoaDon.MaNT_FIELD, maNT);
+            ActivityHoaDon.myDatabase.insert(ActivityHoaDon.TABLE_NAME, null,values);
+            startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
+        }
     }
+
+    private boolean CheckAllFields() {
+        if (txtSoHD.length() == 0) {
+            txtSoHD.setError("Vui lòng không để trống!");
+            return false;
+        } else if (!txtSoHD.getText().toString().matches("[a-zA-Z0-9]+")) {
+            txtSoHD.setError("Vui lòng chỉ nhập kí tự chữ hoặc số!");
+            return false;
+        }
+        if (txtNgayHD.length() == 0) {
+            txtNgayHD.setError("Vui lòng không để trống!");
+            return false;
+        }
+        if (txtMaNT.length() == 0) {
+            txtMaNT.setError("Vui lòng không để trống!");
+            return false;
+        }
+        return true;
+    }
+
     public void cancle(View view){
         startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
     }

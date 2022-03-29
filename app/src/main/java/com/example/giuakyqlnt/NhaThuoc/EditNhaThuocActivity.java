@@ -17,6 +17,8 @@ public class EditNhaThuocActivity extends AppCompatActivity {
     TextView tvMaNT;
     EditText txtTenNT, txtDiaChi;
     Button btnAdd, btnCancel;
+    boolean isAllFieldsChecked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,27 +30,40 @@ public class EditNhaThuocActivity extends AppCompatActivity {
     public void getData(){
         NhaThuoc nhaThuoc = (NhaThuoc) getIntent().getSerializableExtra("item");
         tvMaNT.setText(nhaThuoc.getMaNT());
-        //txtBookID.setEnabled(false);
         txtTenNT.setText(nhaThuoc.getTenNT());
         txtDiaChi.setText(nhaThuoc.getDiaChi());
     }
 
     public void save(View view){
-        //Book book = (Book) getIntent().getSerializableExtra("item");
-        //String id = Integer.toString(book.getId());
         String maNT = tvMaNT.getText().toString();
         String tenNT = txtTenNT.getText().toString();
         String diaChi = txtDiaChi.getText().toString();
-        //Update dữ liệu
-        ContentValues values = new ContentValues();
-        //values.put(QLSach2Activity.BookID_FIELD, bookID);
-        values.put(ActivityNhaThuoc.TenNT_FIELD, tenNT);
-        values.put(ActivityNhaThuoc.DiaChi_FIELD, diaChi);
-        String whereClause = ""+ActivityNhaThuoc.MaNT_FIELD+" = ?";
-        String[] whereArgs = {maNT};
-        ActivityNhaThuoc.myDatabase.update(ActivityNhaThuoc.TABLE_NAME, values, whereClause, whereArgs);
-        startActivity(new Intent(EditNhaThuocActivity.this, ActivityNhaThuoc.class));
+        //Check data
+        isAllFieldsChecked = CheckAllFields();
+        if (isAllFieldsChecked) {
+            //Update dữ liệu
+            ContentValues values = new ContentValues();
+            values.put(ActivityNhaThuoc.TenNT_FIELD, tenNT);
+            values.put(ActivityNhaThuoc.DiaChi_FIELD, diaChi);
+            String whereClause = ""+ActivityNhaThuoc.MaNT_FIELD+" = ?";
+            String[] whereArgs = {maNT};
+            ActivityNhaThuoc.myDatabase.update(ActivityNhaThuoc.TABLE_NAME, values, whereClause, whereArgs);
+            startActivity(new Intent(EditNhaThuocActivity.this, ActivityNhaThuoc.class));            
+        }
     }
+
+    private boolean CheckAllFields() {
+        if (txtDiaChi.length() == 0) {
+            txtDiaChi.setError("Vui lòng không để trống!");
+            return false;
+        }
+        if (txtTenNT.length() == 0) {
+            txtTenNT.setError("Vui lòng không để trống!");
+            return false;
+        }
+        return true;
+    }
+
     public void cancle(View view){
         startActivity(new Intent(EditNhaThuocActivity.this, ActivityNhaThuoc.class));
     }

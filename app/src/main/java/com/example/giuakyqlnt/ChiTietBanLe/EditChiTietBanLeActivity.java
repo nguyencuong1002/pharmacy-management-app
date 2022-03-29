@@ -17,6 +17,9 @@ public class EditChiTietBanLeActivity extends AppCompatActivity {
     TextView tvSOHD, tvMATHUOC;
     EditText txtSOLUONG;
     Button btnAdd, btnCancel;
+    boolean isAllFieldsChecked = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,6 @@ public class EditChiTietBanLeActivity extends AppCompatActivity {
         ChiTietBanLe chiTietBanLe = (ChiTietBanLe) getIntent().getSerializableExtra("item");
         tvSOHD.setText(chiTietBanLe.getSOHD());
         tvMATHUOC.setText(chiTietBanLe.getMATHUOC());
-        //txtBookID.setEnabled(false);
         txtSOLUONG.setText(chiTietBanLe.getSOLUONG());
     }
 
@@ -37,15 +39,30 @@ public class EditChiTietBanLeActivity extends AppCompatActivity {
         String SOHD = tvSOHD.getText().toString();
         String MATHUOC = tvMATHUOC.getText().toString();
         String SOLUONG = txtSOLUONG.getText().toString();
-        //Update dữ liệu
-        ContentValues values = new ContentValues();
-
-        values.put(ActivityChiTietBanLe.SOLUONG_FIELD, SOLUONG);
-        String whereClause = ""+ActivityChiTietBanLe.SOHD_FIELD+" = ? AND "+ActivityChiTietBanLe.MATHUOC_FIELD+" = ?";
-        String[] whereArgs = {SOHD,MATHUOC};
-        ActivityChiTietBanLe.myDatabase.update(ActivityChiTietBanLe.TABLE_NAME, values, whereClause, whereArgs);
-        startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.EditChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
+        //Check data
+        isAllFieldsChecked = CheckAllFields();
+        if (isAllFieldsChecked) {
+            //Update dữ liệu
+            ContentValues values = new ContentValues();
+            values.put(ActivityChiTietBanLe.SOLUONG_FIELD, SOLUONG);
+            String whereClause = ""+ActivityChiTietBanLe.SOHD_FIELD+" = ? AND "+ActivityChiTietBanLe.MATHUOC_FIELD+" = ?";
+            String[] whereArgs = {SOHD,MATHUOC};
+            ActivityChiTietBanLe.myDatabase.update(ActivityChiTietBanLe.TABLE_NAME, values, whereClause, whereArgs);
+            startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.EditChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
+        }
     }
+
+    private boolean CheckAllFields() {
+        if (txtSOLUONG.length() == 0) {
+            txtSOLUONG.setError("Vui lòng không để trống!");
+            return false;
+        } else if (!txtSOLUONG.getText().toString().matches("[0-9]+")) {
+            txtSOLUONG.setError("Vui lòng chỉ nhập kí tự số!");
+            return false;
+        }
+        return true;
+    }
+
     public void cancle(View view){
         startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.EditChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
     }

@@ -14,6 +14,8 @@ public class EditThuocActivity extends AppCompatActivity {
     TextView tvMATHUOC;
     EditText txtTENTHUOC, txtDVT, txtDONGIA;
     Button btnAdd, btnCancel;
+    boolean isAllFieldsChecked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,30 +27,47 @@ public class EditThuocActivity extends AppCompatActivity {
     public void getData(){
         Thuoc Thuoc = (Thuoc) getIntent().getSerializableExtra("item");
         tvMATHUOC.setText(Thuoc.getMATHUOC());
-        //txtBookID.setEnabled(false);
         txtTENTHUOC.setText(Thuoc.getTENTHUOC());
         txtDVT.setText(Thuoc.getDVT());
         txtDONGIA.setText(String.valueOf(Thuoc.getDONGIA()));
     }
 
     public void save(View view){
-        //Book book = (Book) getIntent().getSerializableExtra("item");
-        //String id = Integer.toString(book.getId());
         String MATHUOC = tvMATHUOC.getText().toString();
         String TENTHUOC = txtTENTHUOC.getText().toString();
         String DVT = txtDVT.getText().toString();
         String DONGIA = txtDONGIA.getText().toString();
-        //Update dữ liệu
-        ContentValues values = new ContentValues();
-        //values.put(QLSach2Activity.BookID_FIELD, bookID);
-        values.put(ActivityThuoc.TENTHUOC_FIELD, TENTHUOC);
-        values.put(ActivityThuoc.DVT_FIELD, DVT);
-        values.put(ActivityThuoc.DONGIA_FIELD, DONGIA);
-        String whereClause = ""+ActivityThuoc.MATHUOC_FIELD+" = ?";
-        String[] whereArgs = {MATHUOC};
-        ActivityThuoc.myDatabase.update(ActivityThuoc.TABLE_NAME, values, whereClause, whereArgs);
-        startActivity(new Intent(EditThuocActivity.this, ActivityThuoc.class));
+        //Check data
+        isAllFieldsChecked = CheckAllFields();
+        if (isAllFieldsChecked) {
+            //Update dữ liệu
+            ContentValues values = new ContentValues();
+            values.put(ActivityThuoc.TENTHUOC_FIELD, TENTHUOC);
+            values.put(ActivityThuoc.DVT_FIELD, DVT);
+            values.put(ActivityThuoc.DONGIA_FIELD, DONGIA);
+            String whereClause = ""+ActivityThuoc.MATHUOC_FIELD+" = ?";
+            String[] whereArgs = {MATHUOC};
+            ActivityThuoc.myDatabase.update(ActivityThuoc.TABLE_NAME, values, whereClause, whereArgs);
+            startActivity(new Intent(EditThuocActivity.this, ActivityThuoc.class));
+        }
     }
+
+    private boolean CheckAllFields() {
+        if (txtTENTHUOC.length() == 0) {
+            txtTENTHUOC.setError("Vui lòng không để trống!");
+            return false;
+        }
+        if (txtDVT.length() == 0) {
+            txtDVT.setError("Vui lòng không để trống!");
+            return false;
+        }
+        if (txtDONGIA.length() == 0) {
+            txtDONGIA.setError("Vui lòng không để trống!");
+            return false;
+        }
+        return true;
+    }
+
     public void cancle(View view){
         startActivity(new Intent(EditThuocActivity.this, ActivityThuoc.class));
     }
