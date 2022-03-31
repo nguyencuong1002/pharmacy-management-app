@@ -46,7 +46,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+<<<<<<< HEAD
             app:boxStrokeColor="@color/text"
+=======
+<<<<<<< HEAD
+            app:boxStrokeColor="@color/text"
+=======
+            app:boxStrokeWidthFocused="10dp"
+            app:boxStrokeColor="@color/black"
+>>>>>>> 26ae97b1c134606235932f7f50808671a40617f4
+>>>>>>> 4515b2446b37698e667419e53667040c9873274b
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_marginTop="10dp"
@@ -61,7 +70,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+<<<<<<< HEAD
             app:boxStrokeColor="@color/text"
+=======
+<<<<<<< HEAD
+            app:boxStrokeColor="@color/text"
+=======
+            app:boxStrokeWidthFocused="10dp"
+            app:boxStrokeColor="@color/black"
+>>>>>>> 26ae97b1c134606235932f7f50808671a40617f4
+>>>>>>> 4515b2446b37698e667419e53667040c9873274b
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_marginTop="10dp"
@@ -76,7 +94,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+<<<<<<< HEAD
             app:boxStrokeColor="@color/text"
+=======
+<<<<<<< HEAD
+            app:boxStrokeColor="@color/text"
+=======
+            app:boxStrokeWidthFocused="10dp"
+            app:boxStrokeColor="@color/black"
+>>>>>>> 26ae97b1c134606235932f7f50808671a40617f4
+>>>>>>> 4515b2446b37698e667419e53667040c9873274b
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_marginTop="10dp"
