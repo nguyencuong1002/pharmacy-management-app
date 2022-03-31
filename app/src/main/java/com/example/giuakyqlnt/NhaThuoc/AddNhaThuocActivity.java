@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.R;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,20 +15,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class AddNhaThuocActivity extends AppCompatActivity {
     EditText txtMaNT, txtTenNT, txtDiaChi;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_nha_thuoc);
         mapping();
+        setEvent();
     }
 
-    public void add(View view){
+    public void add(View view) {
         String maNT = txtMaNT.getText().toString();
         String tenNT = txtTenNT.getText().toString();
         String diaChi = txtDiaChi.getText().toString();
@@ -35,14 +38,15 @@ public class AddNhaThuocActivity extends AppCompatActivity {
         isAllFieldsChecked = CheckAllFields();
         if (isAllFieldsChecked) {
             //Add dữ liệu
-        ContentValues values = new ContentValues();
-        values.put(ActivityNhaThuoc.MaNT_FIELD, maNT);
-        values.put(ActivityNhaThuoc.TenNT_FIELD, tenNT);
-        values.put(ActivityNhaThuoc.DiaChi_FIELD, diaChi);
-        ActivityNhaThuoc.myDatabase.insert(ActivityNhaThuoc.TABLE_NAME, null,values);
-        startActivity(new Intent(AddNhaThuocActivity.this, ActivityNhaThuoc.class));
+            ContentValues values = new ContentValues();
+            values.put(ActivityNhaThuoc.MaNT_FIELD, maNT);
+            values.put(ActivityNhaThuoc.TenNT_FIELD, tenNT);
+            values.put(ActivityNhaThuoc.DiaChi_FIELD, diaChi);
+            ActivityNhaThuoc.myDatabase.insert(ActivityNhaThuoc.TABLE_NAME, null, values);
+            startActivity(new Intent(AddNhaThuocActivity.this, ActivityNhaThuoc.class));
         }
     }
+
     private boolean CheckAllFields() {
         if (txtMaNT.length() == 0) {
             txtMaNT.setError("Vui lòng không để trống!");
@@ -61,8 +65,18 @@ public class AddNhaThuocActivity extends AppCompatActivity {
         }
         return true;
     }
+
     public void cancle(View view){
         startActivity(new Intent(AddNhaThuocActivity.this, ActivityNhaThuoc.class));
+    }
+
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddNhaThuocActivity.this, ActivityNhaThuoc.class));
+            }
+        });
     }
 
     private void mapping(){
@@ -71,5 +85,6 @@ public class AddNhaThuocActivity extends AppCompatActivity {
         txtDiaChi = findViewById(R.id.txtDiaChi);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

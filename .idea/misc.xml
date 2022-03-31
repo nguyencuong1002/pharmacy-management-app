@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/drawable-v24/header_bg.xml" value="0.1285" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_chi_tiet_ban_le.xml" value="0.24583333333333332" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.10989583333333333" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.1" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.24583333333333332" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_thuoc.xml" value="0.24583333333333332" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_chi_tiet_ban_le.xml" value="0.11302083333333333" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_hoa_don.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_nha_thuoc.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_hoa_don.xml" value="0.10989583333333333" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_main.xml" value="0.253125" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.16203703703703703" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.24583333333333332" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_thuoc.xml" value="0.24583333333333332" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_chi_tiet_ban_le.xml" value="0.1787037037037037" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_hoa_don.xml" value="0.19166666666666668" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_nha_thuoc.xml" value="0.1814814814814815" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_thuoc.xml" value="0.25416666666666665" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/drawable/header_bg.xml" value="0.108" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/header_component.xml" value="0.24583333333333332" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/menu/menubar.xml" value="0.25" />
         <entry key="..\:/PTIT/Nam 4 - ki 2/Lap trinh Mobile/PROJECT/GiuaKyQLNT/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.2" />
         <entry key="..\:/PTIT/Nam 4 - ki 2/Lap trinh Mobile/PROJECT/GiuaKyQLNT/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.2" />
