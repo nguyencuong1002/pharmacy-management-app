@@ -12,6 +12,7 @@
         android:layout_height="80dp"
         android:gravity="center"
         android:background="@drawable/header_bg">
+
         <ImageView
             android:id="@+id/ivBack"
             android:layout_width="wrap_content"
@@ -42,8 +43,9 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/tvMaNT"
+            android:textColor="@color/text"
             android:padding="10dp"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

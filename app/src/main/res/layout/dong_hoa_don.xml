@@ -20,7 +20,7 @@
         android:id="@+id/tvNgayHD"
         android:layout_weight="3.5"
         android:textColor="#21211F"
-        android:text="Tên Nhà Thuốc"
+        android:text="Ngày Hóa đơn"
         android:textSize="14sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
@@ -30,7 +30,7 @@
         android:id="@+id/tvMaNT"
         android:layout_weight="3.5"
         android:textColor="#21211F"
-        android:text="Địa chỉ"
+        android:text="Mã Nhà Thuốc"
         android:textSize="14sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>

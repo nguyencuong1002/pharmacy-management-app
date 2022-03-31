@@ -8,15 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 public class AddHoaDonActivity extends AppCompatActivity {
+    ActivityHoaDon HD;
     EditText txtSoHD, txtNgayHD, txtMaNT;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -24,6 +28,7 @@ public class AddHoaDonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_hoa_don);
         mapping();
+        setEvent();
     }
 
     public void add(View view){
@@ -50,6 +55,9 @@ public class AddHoaDonActivity extends AppCompatActivity {
         } else if (!txtSoHD.getText().toString().matches("[a-zA-Z0-9]+")) {
             txtSoHD.setError("Vui lòng chỉ nhập kí tự chữ hoặc số!");
             return false;
+        }else if(HD.myDatabase.checkExistID(HD.TABLE_NAME, HD.SoHD_FIELD, txtSoHD.getText().toString())){
+            txtSoHD.setError("Mã nhà thuốc đã tồn tại!");
+            return false;
         }
         if (txtNgayHD.length() == 0) {
             txtNgayHD.setError("Vui lòng không để trống!");
@@ -66,11 +74,21 @@ public class AddHoaDonActivity extends AppCompatActivity {
         startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
+            }
+        });
+    }
+
     private void mapping(){
         txtSoHD = findViewById(R.id.txtSoHD);
         txtNgayHD = findViewById(R.id.txtNgayHD);
         txtMaNT = findViewById(R.id.txtMaNT);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

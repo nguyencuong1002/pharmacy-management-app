@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 public class AddThuocActivity extends AppCompatActivity {
+    ActivityThuoc Thuoc;
     EditText txtMATHUOC, txtTENTHUOC, txtDVT, txtDONGIA;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -21,6 +26,7 @@ public class AddThuocActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_thuoc);
         mapping();
+        setEvent();
     }
 
     public void add(View view){
@@ -49,6 +55,9 @@ public class AddThuocActivity extends AppCompatActivity {
         } else if (!txtMATHUOC.getText().toString().matches("[a-zA-Z0-9]+")) {
             txtMATHUOC.setError("Vui lòng chỉ nhập kí tự chữ hoặc số!");
             return false;
+        }else if(Thuoc.myDatabase.checkExistID(Thuoc.TABLE_NAME, Thuoc.MATHUOC_FIELD, txtMATHUOC.getText().toString())){
+            txtMATHUOC.setError("Mã nhà thuốc đã tồn tại!");
+            return false;
         }
         if (txtTENTHUOC.length() == 0) {
             txtTENTHUOC.setError("Vui lòng không để trống!");
@@ -69,6 +78,15 @@ public class AddThuocActivity extends AppCompatActivity {
         startActivity(new Intent(AddThuocActivity.this, ActivityThuoc.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddThuocActivity.this, ActivityThuoc.class));
+            }
+        });
+    }
+
     private void mapping(){
         txtMATHUOC = findViewById(R.id.txtMATHUOC);
         txtTENTHUOC = findViewById(R.id.txtTENTHUOC);
@@ -76,5 +94,7 @@ public class AddThuocActivity extends AppCompatActivity {
         txtDONGIA = findViewById(R.id.txtDONGIA);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
+
     }
 }

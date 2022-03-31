@@ -3,8 +3,89 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".ChiTietBanLe.ActivityChiTietBanLe">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@drawable/header_bg">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="18dp"
+            android:src="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/tvNhaThuoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="85dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:fontFamily="serif"
+            android:layout_toLeftOf="@+id/ivAdd"
+            android:text="Bán Thuốc"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="#7FACF0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvMaNT"
+            android:layout_weight="1.6"
+            android:textColor="#21211F"
+            android:text="Số HĐ"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvTenNT"
+            android:layout_weight="3.5"
+            android:textColor="#21211F"
+            android:text="Mã Thuốc"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvDiaChi"
+            android:layout_weight="3.5"
+            android:textColor="#21211F"
+            android:text="Số Lượng"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lvChiTietBanLe"

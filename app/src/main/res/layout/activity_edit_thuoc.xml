@@ -3,74 +3,115 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="10dp"
-    android:padding="5dp"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Thuoc.EditThuocActivity">
 
-    <TextView
-        android:id="@+id/tvMATHUOC"
-        android:padding="10dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@drawable/header_bg">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/back" />
 
-    <TextView
-        android:text="Tên Thuốc"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/txtTENTHUOC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:text="Đơn Vị Tính"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/txtDVT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:text="Đơn Giá"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/txtDONGIA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        <TextView
+            android:id="@+id/tvNhaThuoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="100dp"
+            android:fontFamily="serif"
+            android:text="Sửa Thuốc"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:padding="15dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:onClick="save"
-            android:id="@+id/btnAdd"
-            android:layout_marginRight="50dp"
-            android:text="Save"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvMATHUOC"
+            android:padding="10dp"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <Button
-            android:onClick="cancle"
-            android:id="@+id/btnCancel"
-            android:text="Cancel"
-            android:layout_width="wrap_content"
+
+        <TextView
+            android:text="Tên Thuốc"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtTENTHUOC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Đơn Vị Tính"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtDVT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Đơn Giá"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/txtDONGIA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="save"
+                android:id="@+id/btnAdd"
+                android:layout_marginRight="50dp"
+                android:text="Save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:onClick="cancle"
+                android:id="@+id/btnCancel"
+                android:text="Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
     </LinearLayout>
+
+
 </LinearLayout>

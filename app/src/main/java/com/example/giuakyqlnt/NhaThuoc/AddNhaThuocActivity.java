@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 public class AddNhaThuocActivity extends AppCompatActivity {
+    ActivityNhaThuoc NT;
     EditText txtMaNT, txtTenNT, txtDiaChi;
     Button btnAdd, btnCancel;
     ImageView ivBack;
@@ -47,19 +48,23 @@ public class AddNhaThuocActivity extends AppCompatActivity {
         }
     }
 
+    //Validate All Field
     private boolean CheckAllFields() {
-        if (txtMaNT.length() == 0) {
+        if (txtMaNT.length() == 0) {            //ma nha thuoc
             txtMaNT.setError("Vui lòng không để trống!");
             return false;
         } else if (!txtMaNT.getText().toString().matches("[a-zA-Z0-9]+")) {
             txtMaNT.setError("Vui lòng chỉ nhập kí tự chữ hoặc số!");
             return false;
+        }else if(NT.myDatabase.checkExistID(NT.TABLE_NAME, NT.MaNT_FIELD, txtMaNT.getText().toString())){
+            txtMaNT.setError("Mã nhà thuốc đã tồn tại!");
+            return false;
         }
-        if (txtTenNT.length() == 0) {
+        if (txtTenNT.length() == 0) {       //ten nha thuoc
             txtTenNT.setError("Vui lòng không để trống!");
             return false;
         }
-        if (txtDiaChi.length() == 0) {
+        if (txtDiaChi.length() == 0) {      //dia chi
             txtDiaChi.setError("Vui lòng không để trống!");
             return false;
         }

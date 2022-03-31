@@ -9,22 +9,26 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.EditNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 public class EditChiTietBanLeActivity extends AppCompatActivity {
     TextView tvSOHD, tvMATHUOC;
     EditText txtSOLUONG;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_chi_tiet_ban_le);
         mapping();
+        setEvent();
         getData();
     }
 
@@ -67,11 +71,22 @@ public class EditChiTietBanLeActivity extends AppCompatActivity {
         startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.EditChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EditChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
+            }
+        });
+    }
+
     private void mapping(){
         tvSOHD = findViewById(R.id.tvSOHD);
         tvMATHUOC = findViewById(R.id.tvMATHUOC);
         txtSOLUONG = findViewById(R.id.txtSOLUONG);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
+
     }
 }

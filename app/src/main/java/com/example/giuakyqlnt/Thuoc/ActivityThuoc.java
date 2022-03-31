@@ -9,20 +9,25 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 import java.util.ArrayList;
 
 public class ActivityThuoc extends AppCompatActivity {
     public static MyDatabase myDatabase;
-    static final String DB_NAME = "qlnhathuoc.sqlite";
+    public static final String DB_NAME = "qlnhathuoc.sqlite";
     static final String TABLE_NAME = "tbl_Thuoc";
     static final String MATHUOC_FIELD = "MATHUOC";
     static final String TENTHUOC_FIELD = "TENTHUOC";
@@ -30,6 +35,7 @@ public class ActivityThuoc extends AppCompatActivity {
     static final String DONGIA_FIELD = "DONGIA";
     ThuocAdapter ThuocAdapter;
     ListView lvThuoc;
+    ImageView ivAdd, ivBack;
     ArrayList<Thuoc> list = new ArrayList<>();
 
     @Override
@@ -43,6 +49,7 @@ public class ActivityThuoc extends AppCompatActivity {
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
         loadData();
+        setEvent();
     }
 
     public void loadData() {
@@ -51,20 +58,38 @@ public class ActivityThuoc extends AppCompatActivity {
         lvThuoc.setAdapter(ThuocAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menubar, menu);
-        return super.onCreateOptionsMenu(menu);
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menubar, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.getItemId() == R.id.menuAdd) {
+//            startActivity(new Intent(ActivityThuoc.this, AddThuocActivity.class));
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
+    public void setEvent(){
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityThuoc.this, AddThuocActivity.class));
+
+            }
+        });
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityThuoc.this, MainActivity.class));
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuAdd) {
-            startActivity(new Intent(ActivityThuoc.this, AddThuocActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 
     //Lấy danh sách
     public ArrayList<Thuoc> getAll() {
@@ -112,5 +137,7 @@ public class ActivityThuoc extends AppCompatActivity {
 
     private void mapping() {
         lvThuoc = findViewById(R.id.lvThuoc);
+        ivAdd = findViewById(R.id.ivAddThuoc);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

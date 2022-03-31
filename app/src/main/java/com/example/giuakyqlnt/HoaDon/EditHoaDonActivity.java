@@ -7,18 +7,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.HoaDon.HoaDon;
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.EditNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 public class EditHoaDonActivity extends AppCompatActivity {
     TextView tvSoHD;
     EditText txtNgayHD, txtMaNT;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -72,11 +76,21 @@ public class EditHoaDonActivity extends AppCompatActivity {
         startActivity(new Intent(EditHoaDonActivity.this, ActivityHoaDon.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EditHoaDonActivity.this, ActivityHoaDon.class));
+            }
+        });
+    }
+
     private void mapping(){
         tvSoHD = findViewById(R.id.tvSoHD);
         txtNgayHD = findViewById(R.id.txtNgayHD);
         txtMaNT = findViewById(R.id.txtMaNT);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

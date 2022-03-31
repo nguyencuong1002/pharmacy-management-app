@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.giuakyqlnt.R;
 
+import java.text.DecimalFormat;
+
 public class EditThuocActivity extends AppCompatActivity {
     TextView tvMATHUOC;
     EditText txtTENTHUOC, txtDVT, txtDONGIA;
