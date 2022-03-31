@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <item name="tvSoHD" type="id">tvSoHD</item>-->
-<!--    <item name="tvNgayHD" type="id"></item>-->
+    <!--    <item name="tvSoHD" type="id">tvSoHD</item>-->
+    <!--    <item name="tvNgayHD" type="id"></item>-->
+    <item name="ivAdd" type="id"></item>
+    <item name="ivBack" type="id"></item>
 </resources>
