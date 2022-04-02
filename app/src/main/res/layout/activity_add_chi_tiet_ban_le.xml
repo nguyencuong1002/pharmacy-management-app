@@ -5,45 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".ChiTietBanLe.AddChiTietBanLeActivity">
-    <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/txtSOHD"
-        android:hint="Nhập Số Hóa Đơn"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/txtMATHUOC"
-        android:hint="Nhập Mã Thuốc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/txtSOLUONG"
-        android:hint="Nhập Số Lượng"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@drawable/header_bg">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/back" />
+        <TextView
+            android:id="@+id/tvThuoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="150dp"
+            android:fontFamily="serif"
+            android:text="Bán Lẻ"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:onClick="add"
-            android:id="@+id/btnAdd"
-            android:layout_marginRight="50dp"
-            android:text="Add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:onClick="cancle"
-            android:id="@+id/btnCancel"
-            android:text="Cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtSOHD"
+                android:hint="Nhập Số Hóa Đơn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtMATHUOC"
+                android:hint="Nhập Mã Thuốc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtSOLUONG"
+                android:hint="Nhập Số Lượng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="add"
+                android:id="@+id/btnAdd"
+                android:layout_marginRight="50dp"
+                android:text="Add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:onClick="cancle"
+                android:id="@+id/btnCancel"
+                android:text="Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

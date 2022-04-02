@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.giuakyqlnt.R;
@@ -17,6 +18,7 @@ public class EditNhaThuocActivity extends AppCompatActivity {
     TextView tvMaNT;
     EditText txtTenNT, txtDiaChi;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -24,6 +26,7 @@ public class EditNhaThuocActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_nha_thuoc);
         mapping();
+        setEvent();
         getData();
     }
 
@@ -68,11 +71,21 @@ public class EditNhaThuocActivity extends AppCompatActivity {
         startActivity(new Intent(EditNhaThuocActivity.this, ActivityNhaThuoc.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EditNhaThuocActivity.this, ActivityNhaThuoc.class));
+            }
+        });
+    }
+
     private void mapping(){
         tvMaNT = findViewById(R.id.tvMaNT);
         txtTenNT = findViewById(R.id.txtTenNT);
         txtDiaChi = findViewById(R.id.txtDiaChi);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

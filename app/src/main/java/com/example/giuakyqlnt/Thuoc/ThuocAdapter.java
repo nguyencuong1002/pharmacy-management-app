@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.giuakyqlnt.R;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class ThuocAdapter extends BaseAdapter {
@@ -68,7 +69,8 @@ public class ThuocAdapter extends BaseAdapter {
         holder.tvMATHUOC.setText(String.valueOf(Thuoc.getMATHUOC()));
         holder.tvTENTHUOC.setText(Thuoc.getTENTHUOC());
         holder.tvDVT.setText(String.valueOf(Thuoc.getDVT()));
-        holder.tvDONGIA.setText(String.valueOf(Thuoc.getDONGIA()));
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        holder.tvDONGIA.setText(String.valueOf(formatter.format(Thuoc.getDONGIA())));
         //bắt sự kiện
         holder.ivEdit.setOnClickListener(new View.OnClickListener() {
             @Override

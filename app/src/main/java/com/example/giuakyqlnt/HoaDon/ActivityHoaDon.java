@@ -9,12 +9,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
@@ -34,6 +37,7 @@ public class ActivityHoaDon extends AppCompatActivity {
 
     HoaDonAdapter hoaDonAdapter;
     ListView lvHoaDon;
+    ImageView ivAdd, ivBack;
     ArrayList<HoaDon> list = new ArrayList<>();
 
     @Override
@@ -50,6 +54,7 @@ public class ActivityHoaDon extends AppCompatActivity {
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
         loadData();
+        setEvent();
     }
 
     public void loadData() {
@@ -58,19 +63,35 @@ public class ActivityHoaDon extends AppCompatActivity {
         lvHoaDon.setAdapter(hoaDonAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menubar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menubar, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if (item.getItemId() == R.id.menuAdd) {
+//            startActivity(new Intent(ActivityHoaDon.this, AddHoaDonActivity.class));
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuAdd) {
-            startActivity(new Intent(ActivityHoaDon.this, AddHoaDonActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
+    public void setEvent(){
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityHoaDon.this, AddHoaDonActivity.class));
+
+            }
+        });
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityHoaDon.this, MainActivity.class));
+            }
+        });
     }
 
     //Lấy danh sách
@@ -118,5 +139,7 @@ public class ActivityHoaDon extends AppCompatActivity {
 
     private void mapping() {
         lvHoaDon = findViewById(R.id.lvHoaDon);
+        ivAdd = findViewById(R.id.ivAdd);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

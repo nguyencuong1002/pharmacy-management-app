@@ -43,6 +43,16 @@ public class MyDatabase extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         return sqLiteDatabase.delete(table, whereClause, whereArgs);
     }
+    //Kiểm tra tồn tại ID
+    public boolean checkExistID(String tableName, String ID_Field, String id){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from "+tableName+" where "+ID_Field+" = ?", new String[] {id});
+        if(cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 

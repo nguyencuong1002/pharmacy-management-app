@@ -12,11 +12,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
 
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 import java.util.ArrayList;
@@ -25,12 +30,13 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
     public static MyDatabase myDatabase;
     static final String DB_NAME = "qlnhathuoc.sqlite";
     static final String TABLE_NAME = "tbl_ChiTietBanLe";
-    static final String SOHD_FIELD = "SOHD";
+    static final String SOHD_FIELD = "SoHD";
     static final String MATHUOC_FIELD = "MATHUOC";
     static final String SOLUONG_FIELD = "SOLUONG";
 
     ChiTietBanLeAdapter chiTietBanLeAdapter;
     ListView lvChiTietBanLe;
+    ImageView ivAdd, ivBack;
     ArrayList<ChiTietBanLe> list = new ArrayList<>();
 
     @Override
@@ -44,6 +50,7 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
         loadData();
+        setEvent();
     }
 
     public void loadData() {
@@ -52,19 +59,20 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
         lvChiTietBanLe.setAdapter(chiTietBanLeAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menubar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+    public void setEvent(){
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityChiTietBanLe.this, AddChiTietBanLeActivity.class));
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuAdd) {
-            startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe.this, AddChiTietBanLeActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
+            }
+        });
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityChiTietBanLe.this, MainActivity.class));
+            }
+        });
     }
 
     //Lấy danh sách
@@ -112,5 +120,7 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
 
     private void mapping() {
         lvChiTietBanLe = findViewById(R.id.lvChiTietBanLe);
+        ivAdd = findViewById(R.id.ivAdd);
+        ivBack = findViewById(R.id.ivBack);
     }
 }

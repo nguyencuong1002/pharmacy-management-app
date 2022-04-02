@@ -3,6 +3,9 @@ package com.example.giuakyqlnt.ChiTietBanLe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 
@@ -11,12 +14,14 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.sql.PreparedStatement;
 
 public class AddChiTietBanLeActivity extends AppCompatActivity {
     EditText txtSOHD, txtMATHUOC, txtSOLUONG;
     Button btnAdd, btnCancel;
+    ImageView ivBack;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -24,6 +29,7 @@ public class AddChiTietBanLeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_chi_tiet_ban_le);
         mapping();
+        setEvent();
     }
 
     public void add(View view){
@@ -66,12 +72,23 @@ public class AddChiTietBanLeActivity extends AppCompatActivity {
         startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.AddChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
+            }
+        });
+    }
+
     private void mapping(){
         txtSOHD = findViewById(R.id.txtSOHD);
         txtMATHUOC = findViewById(R.id.txtMATHUOC);
         txtSOLUONG = findViewById(R.id.txtSOLUONG);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
+        ivBack = findViewById(R.id.ivBack);
+
     }
 
 
