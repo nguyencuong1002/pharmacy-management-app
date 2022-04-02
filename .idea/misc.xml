@@ -3,15 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_chi_tiet_ban_le.xml" value="0.1" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.264" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.1" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_thuoc.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_chi_tiet_ban_le.xml" value="0.2388888888888889" />
+=======
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.10989583333333333" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.1" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_add_thuoc.xml" value="0.25" />
+>>>>>>> 383299b1aa3b7c53b6d1370459471b2822b867f1
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_chi_tiet_ban_le.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_hoa_don.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_nha_thuoc.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_thuoc.xml" value="0.25" />
+<<<<<<< HEAD
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_hoa_don.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_main.xml" value="0.2388888888888889" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.16203703703703703" />
@@ -20,6 +27,13 @@
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_hoa_don.xml" value="0.19166666666666668" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_nha_thuoc.xml" value="0.1814814814814815" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_thuoc.xml" value="0.25" />
+=======
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_hoa_don.xml" value="0.10989583333333333" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_main.xml" value="0.253125" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.16203703703703703" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_hoa_don.xml" value="0.19166666666666668" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_nha_thuoc.xml" value="0.1814814814814815" />
+>>>>>>> 383299b1aa3b7c53b6d1370459471b2822b867f1
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/menu/menubar.xml" value="0.25" />
       </map>
     </option>
