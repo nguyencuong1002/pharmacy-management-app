@@ -45,7 +45,17 @@
             android:textSize="25dp"
             android:textStyle="bold" />
     </RelativeLayout>
-
+    <TextView
+        android:id="@+id/tvXemTTBL"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#2B6ED5"
+        android:text="Xem Thông Tin Bán Lẻ"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <LinearLayout
         android:orientation="horizontal"
         android:weightSum="10"

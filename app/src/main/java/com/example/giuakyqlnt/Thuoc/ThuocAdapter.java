@@ -2,6 +2,7 @@ package com.example.giuakyqlnt.Thuoc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,9 @@ public class ThuocAdapter extends BaseAdapter {
             holder.tvDONGIA = (TextView) view.findViewById(R.id.tvDONGIA);
             holder.ivEdit = (ImageView) view.findViewById(R.id.ivEdit);
             holder.ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
+            if(i%2!=0){
+                view.setBackgroundColor(Color.parseColor("#D2D7DE"));
+            }
             view.setTag(holder);
         }else{
             holder = (ThuocAdapter.ViewHolder) view.getTag();
