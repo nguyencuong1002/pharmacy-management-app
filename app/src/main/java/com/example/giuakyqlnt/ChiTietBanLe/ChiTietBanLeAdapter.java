@@ -2,6 +2,7 @@ package com.example.giuakyqlnt.ChiTietBanLe;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,9 +50,9 @@ public class ChiTietBanLeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        com.example.giuakyqlnt.ChiTietBanLe.ChiTietBanLeAdapter.ViewHolder holder;
+        ViewHolder holder;
         if(view == null){
-            holder = new com.example.giuakyqlnt.ChiTietBanLe.ChiTietBanLeAdapter.ViewHolder();
+            holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout,null);
             holder.tvSOHD = (TextView) view.findViewById(R.id.tvSOHD);
@@ -59,9 +60,12 @@ public class ChiTietBanLeAdapter extends BaseAdapter {
             holder.tvSOLUONG = (TextView) view.findViewById(R.id.tvSOLUONG);
             holder.ivEdit = (ImageView) view.findViewById(R.id.ivEdit);
             holder.ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
+            if(i%2!=0){
+                view.setBackgroundColor(Color.parseColor("#D2D7DE"));
+            }
             view.setTag(holder);
         }else{
-            holder = (com.example.giuakyqlnt.ChiTietBanLe.ChiTietBanLeAdapter.ViewHolder) view.getTag();
+            holder = (ViewHolder) view.getTag();
         }
 
         ChiTietBanLe chiTietBanLe = listChiTietBanLe.get(i);
@@ -80,7 +84,7 @@ public class ChiTietBanLeAdapter extends BaseAdapter {
         holder.ivDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.DialogXoaCV(chiTietBanLe.getMATHUOC(),  chiTietBanLe.getSOHD());
+                context.DialogXoaCV(chiTietBanLe.getSOHD(),  chiTietBanLe.getMATHUOC());
             }
         });
         return view;
