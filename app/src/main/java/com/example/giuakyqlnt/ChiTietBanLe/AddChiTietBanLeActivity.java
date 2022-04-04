@@ -49,13 +49,58 @@ public class AddChiTietBanLeActivity extends AppCompatActivity {
         }
     }
 
+    public boolean checkSoHD(String SoHD){
+        String sql ="SELECT * FROM "+ ActivityHoaDon.TABLE_NAME +" WHERE '"+SoHD+"' = SoHD";
+        Cursor cursor = ActivityChiTietBanLe.myDatabase.SelectData(sql);
+        Log.d("CURSORcheckSOHD ", String.valueOf(cursor.getCount()));
+        if(cursor.getCount()>0) {
+            cursor.close();
+            return true;
+        }
+        else {
+            cursor.close();
+            return false;
+        }
+    }
+    public boolean checkMaThuoc(String MATHUOC){
+        String sql ="SELECT * FROM "+ ActivityThuoc.TABLE_NAME +" WHERE '"+MATHUOC+"' = MATHUOC";
+        Cursor cursor = ActivityChiTietBanLe.myDatabase.SelectData(sql);
+        Log.d("CURSORcheckMATHUOC ", String.valueOf(cursor.getCount()));
+        if(cursor.getCount()>0) {
+            cursor.close();
+            return true;
+        }
+        else {
+            cursor.close();
+            return false;
+        }
+    }
+    public boolean checkTrungMaThuoc_HoaDon(String MATHUOC, String SoHD){
+        String sql ="SELECT * FROM "+ActivityChiTietBanLe.TABLE_NAME+" WHERE '"+MATHUOC+"' = MATHUOC AND '"+SoHD+"' =SoHD";
+        Cursor cursor = ActivityChiTietBanLe.myDatabase.SelectData(sql);
+        Log.d("CURSORcheckTrung_MATHUOC_SoHD ", String.valueOf(cursor.getCount()));
+        if(cursor.getCount()>0) {
+            cursor.close();
+            return false;
+        }
+        else {
+            cursor.close();
+            return true;
+        }
+    }
     private boolean CheckAllFields() {
         if (txtSOHD.length() == 0) {
             txtSOHD.setError("Vui lòng không để trống!");
             return false;
+        }else if(!checkSoHD(txtSOHD.getText().toString())){
+            txtSOHD.setError("Số Hóa đơn chưa được tạo, vui lòng chọn số Hóa đơn đã có");
+            return false;
         }
         if (txtMATHUOC.length() == 0) {
             txtMATHUOC.setError("Vui lòng không để trống!");
+            return false;
+        }else if(!checkMaThuoc(txtMATHUOC.getText().toString())) {
+            txtMATHUOC.setError("Mã thuốc chưa được tạo, vui lòng chọn Mã thuốc đã có");
             return false;
         }
         if (txtSOLUONG.length() == 0) {
@@ -65,9 +110,15 @@ public class AddChiTietBanLeActivity extends AppCompatActivity {
             txtSOLUONG.setError("Vui lòng chỉ nhập kí tự số!");
             return false;
         }
+        if(!checkTrungMaThuoc_HoaDon(txtMATHUOC.getText().toString(),txtSOHD.getText().toString())) {
+            Toast toast = Toast.makeText(AddChiTietBanLeActivity.this,"Chi tiết hóa đơn đã được tạo, vui lòng cập nhật lại! ",Toast.LENGTH_SHORT);
+            // Gravity.CENTER = Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL;
+            toast.setGravity(Gravity.CENTER, 20, 30);
+            toast.show();
+            return false;
+        }
         return true;
     }
-
     public void cancle(View view){
         startActivity(new Intent(com.example.giuakyqlnt.ChiTietBanLe.AddChiTietBanLeActivity.this, ActivityChiTietBanLe.class));
     }
