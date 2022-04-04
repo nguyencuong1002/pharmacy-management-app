@@ -1,22 +1,16 @@
 package com.example.giuakyqlnt.ChiTietBanLe;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
-import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
-import com.example.giuakyqlnt.R;
-
-
 import android.content.ContentValues;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import java.sql.PreparedStatement;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.giuakyqlnt.R;
 
 public class AddChiTietBanLeActivity extends AppCompatActivity {
     EditText txtSOHD, txtMATHUOC, txtSOLUONG;
