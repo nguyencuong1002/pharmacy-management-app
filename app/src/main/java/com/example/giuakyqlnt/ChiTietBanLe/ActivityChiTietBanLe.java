@@ -1,27 +1,21 @@
 package com.example.giuakyqlnt.ChiTietBanLe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.giuakyqlnt.ActivityThongTinBanLe;
 import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
-
-import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
-import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 import java.util.ArrayList;
@@ -37,6 +31,7 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
     ChiTietBanLeAdapter chiTietBanLeAdapter;
     ListView lvChiTietBanLe;
     ImageView ivAdd, ivBack;
+    TextView tvXemTTBL;
     ArrayList<ChiTietBanLe> list = new ArrayList<>();
 
     @Override
@@ -73,6 +68,14 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
                 startActivity(new Intent(ActivityChiTietBanLe.this, MainActivity.class));
             }
         });
+
+        tvXemTTBL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ActivityChiTietBanLe.this, ActivityThongTinBanLe.class));
+            }
+        });
+
     }
 
     //Lấy danh sách
@@ -91,29 +94,28 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
         return list;
     }
 
+
     //Show dialog Xóa Dữ liệu
     public void DialogXoaCV(String SOHD, String MATHUOC) {
         String whereClause = ""+SOHD_FIELD+" = ? AND "+MATHUOC_FIELD+" = ?";
         String[] whereArgs = {SOHD,MATHUOC};
-        Log.d("AAAD", whereArgs + " ok");
         AlertDialog.Builder dialogXoa = new AlertDialog.Builder(this);
-        dialogXoa.setMessage("Bạn có muốn xóa chi tiết hóa đơn có số hóa đơn:  " + SOHD + " và mã thuốc: "+ MATHUOC + " không?");
+        dialogXoa.setMessage("Bạn có muốn xóa chi tiết hóa đơn có số hóa đơn:  " +SOHD+ " và mã thuốc: "+MATHUOC+ " không?");
         dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 myDatabase.delete(TABLE_NAME, whereClause, whereArgs);
-                Toast.makeText(com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe.this, "Đã xóa " + SOHD +" "+ MATHUOC, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityChiTietBanLe.this, "Đã xóa " + SOHD +" "+ MATHUOC, Toast.LENGTH_SHORT).show();
                 loadData();
             }
-
         });
+        chiTietBanLeAdapter.notifyDataSetChanged();
         dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
             }
         });
-        //bookAdapter.notifyDataSetChanged();
         dialogXoa.show();
     }
 
@@ -122,5 +124,7 @@ public class ActivityChiTietBanLe extends AppCompatActivity {
         lvChiTietBanLe = findViewById(R.id.lvChiTietBanLe);
         ivAdd = findViewById(R.id.ivAdd);
         ivBack = findViewById(R.id.ivBack);
+        tvXemTTBL = findViewById(R.id.tvXemTTBL);
+//        ivBackToBanThuoc = findViewById(R.id.ivBackToBanThuoc);
     }
 }

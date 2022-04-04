@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class ActivityThuoc extends AppCompatActivity {
     public static MyDatabase myDatabase;
     public static final String DB_NAME = "qlnhathuoc.sqlite";
-    static final String TABLE_NAME = "tbl_Thuoc";
+    public static final String TABLE_NAME = "tbl_Thuoc";
     static final String MATHUOC_FIELD = "MATHUOC";
     static final String TENTHUOC_FIELD = "TENTHUOC";
     static final String DVT_FIELD = "DVT";

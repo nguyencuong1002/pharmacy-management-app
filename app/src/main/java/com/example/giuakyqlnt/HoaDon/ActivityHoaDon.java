@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class ActivityHoaDon extends AppCompatActivity {
     public static MyDatabase myDatabase;
 //    static final String DB_NAME = "qlnhathuoc.sqlite";
-    static final String TABLE_NAME = "tbl_HoaDon";
+    public static final String TABLE_NAME = "tbl_HoaDon";
     static final String SoHD_FIELD = "SoHD";
     static final String NgayHD_FIELD = "NgayHD";
     static final String MaNT_FIELD = "MaNT";//khóa ngoại

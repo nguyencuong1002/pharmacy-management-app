@@ -7,8 +7,10 @@ public class ChiTietBanLe implements Serializable {
     private String MATHUOC;
     private String SOLUONG;
 
+
     public ChiTietBanLe() {
     }
+
 
     public ChiTietBanLe(String SOHD, String MATHUOC, String SOLUONG) {
         this.SOHD = SOHD;
@@ -43,7 +45,7 @@ public class ChiTietBanLe implements Serializable {
     @Override
     public String toString() {
         return "ChiTietBanLe{" +
-                "SOHD='" + SOHD + '\'' +
+                "SoHD='" + SOHD + '\'' +
                 ", MATHUOC='" + MATHUOC + '\'' +
                 ", SOLUONG='" + SOLUONG + '\'' +
                 '}';

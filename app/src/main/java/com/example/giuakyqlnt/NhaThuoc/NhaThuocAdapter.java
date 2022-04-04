@@ -2,6 +2,8 @@ package com.example.giuakyqlnt.NhaThuoc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,12 +60,16 @@ public class NhaThuocAdapter extends BaseAdapter {
             holder.tvDiaChi = (TextView) view.findViewById(R.id.tvDiaChi);
             holder.ivEdit = (ImageView) view.findViewById(R.id.ivEdit);
             holder.ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
+            if(i%2!=0){
+                view.setBackgroundColor(Color.parseColor("#D2D7DE"));
+            }
             view.setTag(holder);
         }else{
             holder = (ViewHolder) view.getTag();
         }
-
+        Log.d("List", listNhaThuoc + " ok");
         NhaThuoc nhaThuoc = listNhaThuoc.get(i);
+        Log.d("NT", nhaThuoc + " ok");
         holder.tvMaNT.setText(nhaThuoc.getMaNT());
         holder.tvTenNT.setText(nhaThuoc.getTenNT());
         holder.tvDiaChi.setText(nhaThuoc.getDiaChi());

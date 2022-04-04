@@ -2,6 +2,7 @@ package com.example.giuakyqlnt.HoaDon;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
-//import com.example.giuakyqlnt.HoaDon.EditHoaDonActivity;
-import com.example.giuakyqlnt.HoaDon.HoaDon;
 import com.example.giuakyqlnt.R;
 
 import java.util.List;
+
+//import com.example.giuakyqlnt.HoaDon.EditHoaDonActivity;
 
 public class HoaDonAdapter extends BaseAdapter {
 
@@ -61,6 +61,9 @@ public class HoaDonAdapter extends BaseAdapter {
             holder.tvMaNT = (TextView) view.findViewById(R.id.tvMaNT);
             holder.ivEdit = (ImageView) view.findViewById(R.id.ivEdit);
             holder.ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
+            if(i%2!=0){
+                view.setBackgroundColor(Color.parseColor("#D2D7DE"));
+            }
             view.setTag(holder);
         }else{
             holder = (ViewHolder) view.getTag();
