@@ -11,6 +11,16 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Cartesian;
+import com.anychart.core.cartesian.series.Column;
+import com.anychart.enums.Anchor;
+import com.anychart.enums.HoverMode;
+import com.anychart.enums.Position;
+import com.anychart.enums.TooltipPositionMode;
 import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 import com.example.giuakyqlnt.ChiTietThongTin.ActivityXemChiTietThongTin;
 
@@ -33,7 +43,7 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
         mapping();
         myDatabase = new MyDatabase(ActivityThongTinBanLe.this, MyDatabase.DB_NAME, null, 1);
         loadData();
-
+        setEvent();
         List<JSONObject> list;
         try {
             list = getAll();
@@ -55,9 +65,8 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        setEvent();
-
+//        setEvent();
+        chartView();
     }
 
     public void loadData(){
@@ -119,6 +128,65 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
 //        }
 //        return list;
 //    }
+
+    //Chart View
+    public void chartView(){
+        AnyChartView anyChartView = findViewById(R.id.any_chart_view);
+        anyChartView.setProgressBar(findViewById(R.id.progress_bar));
+        List<JSONObject> list;
+        List<DataEntry> data = new ArrayList<>();
+
+        try {
+            list = getAll();
+            for(int i = 0; i < list.size(); i++){
+                JSONObject obj =  list.get(i);
+                String SoHD = obj.getString("SOHD");
+                Integer tongTien  = Integer.parseInt(obj.getString("TongTien"));
+                data.add(new ValueDataEntry(SoHD, tongTien));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+        Cartesian cartesian = AnyChart.column();
+
+//        List<DataEntry> data = new ArrayList<>();
+//        data.add(new ValueDataEntry("Rouge", 280540));
+//        data.add(new ValueDataEntry("sss", 594190));
+//        data.add(new ValueDataEntry("Mascaras", 102610));
+//        data.add(new ValueDataEntry("Lip gloss", 80430));
+
+
+        Column column = cartesian.column(data);
+
+        column.tooltip()
+                .titleFormat("{%X}")
+                .position(Position.CENTER_BOTTOM)
+                .anchor(Anchor.CENTER_BOTTOM)
+                .offsetX(0d)
+                .offsetY(5d)
+                .format("{%Value}{groupsSeparator: }");
+
+        cartesian.animation(true);
+        cartesian.title("Biểu đồ Thông Tin Bán Lẻ");
+
+        cartesian.yScale().minimum(0d);
+
+//        cartesian.xAxis(0).labels().format("{%X}{groupsSeparator}");
+
+        cartesian.yAxis(0).labels().format("{%Value}{groupsSeparator: }");
+
+        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
+        cartesian.interactivity().hoverMode(HoverMode.BY_X);
+
+        cartesian.xAxis(0).title("Hóa Đơn");
+        cartesian.yAxis(0).title("Tổng Tiền");
+
+        anyChartView.setChart(cartesian);
+    }
+
 
     private void mapping() {
         lvTTBL = findViewById(R.id.lvThongTinBanLe);

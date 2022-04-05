@@ -37,10 +37,31 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/lvThongTinBanLe"
+    <LinearLayout
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="25dp"></ListView>
+        android:layout_height="320dp">
+        <ListView
+            android:id="@+id/lvThongTinBanLe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.anychart.AnyChartView
+            android:id="@+id/any_chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </FrameLayout>
 
 </LinearLayout>
