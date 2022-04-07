@@ -40,9 +40,9 @@ public class ActivitySendOTP extends AppCompatActivity {
                 }
                 progressBar.setVisibility(View.VISIBLE);
                 btnGetOTP.setVisibility(View.INVISIBLE);
-
+//                "+84" + inputMobile.getText().toString()
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        "+84" + inputMobile.getText().toString(),
+                        inputMobile.getText().toString(),
                         60,
                         TimeUnit.SECONDS,
                         ActivitySendOTP.this,

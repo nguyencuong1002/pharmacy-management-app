@@ -42,9 +42,10 @@ public class ActivityVerify extends AppCompatActivity {
         btnVerify = findViewById(R.id.btnVerify);
         tvResendOTP = findViewById(R.id.textResendOTP);
 
-        textMobile.setText(String.format(
-                "+84-%s", getIntent().getStringExtra("mobile")
-        ));
+//        textMobile.setText(String.format(
+//                "+84-%s", getIntent().getStringExtra("mobile")
+//        ));
+        textMobile.setText(getIntent().getStringExtra("mobile"));
         inputCode1 = findViewById(R.id.inputCode1);
         inputCode2 = findViewById(R.id.inputCode2);
         inputCode3 = findViewById(R.id.inputCode3);

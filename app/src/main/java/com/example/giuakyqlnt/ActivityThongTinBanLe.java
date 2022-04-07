@@ -148,8 +148,6 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         Cartesian cartesian = AnyChart.column();
 
 //        List<DataEntry> data = new ArrayList<>();
@@ -157,7 +155,6 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
 //        data.add(new ValueDataEntry("sss", 594190));
 //        data.add(new ValueDataEntry("Mascaras", 102610));
 //        data.add(new ValueDataEntry("Lip gloss", 80430));
-
 
         Column column = cartesian.column(data);
 
@@ -174,8 +171,6 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
 
         cartesian.yScale().minimum(0d);
 
-//        cartesian.xAxis(0).labels().format("{%X}{groupsSeparator}");
-
         cartesian.yAxis(0).labels().format("{%Value}{groupsSeparator: }");
 
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
@@ -186,7 +181,6 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
 
         anyChartView.setChart(cartesian);
     }
-
 
     private void mapping() {
         lvTTBL = findViewById(R.id.lvThongTinBanLe);
