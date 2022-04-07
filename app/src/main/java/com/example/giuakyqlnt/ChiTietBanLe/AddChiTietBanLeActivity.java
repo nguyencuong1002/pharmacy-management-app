@@ -1,5 +1,6 @@
 package com.example.giuakyqlnt.ChiTietBanLe;
 
+
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -7,6 +8,11 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+
+import android.content.ContentValues;
+import android.content.Intent;
+import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +21,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.R;
 import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
+
+import com.example.giuakyqlnt.R;
+
 
 public class AddChiTietBanLeActivity extends AppCompatActivity {
     EditText txtSOHD, txtMATHUOC, txtSOLUONG;
