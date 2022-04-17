@@ -97,9 +97,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:onClick="upImg"
+                android:id="@+id/btnUpImg"
+                android:text="Update Ảnh"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
                 android:onClick="save"
                 android:id="@+id/btnAdd"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="20dp"
                 android:text="Save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -111,6 +118,12 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/imgTHUOC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/ic_launcher_background" />
     </LinearLayout>
 
 

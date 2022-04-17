@@ -44,7 +44,7 @@ public class ThuocAdapter extends BaseAdapter {
 
     public class ViewHolder{
         TextView tvMATHUOC,tvTENTHUOC,tvDVT, tvDONGIA;
-        ImageView ivEdit, ivDelete;
+        ImageView ivEdit, ivDelete, imgTHUOC;
     }
 
 
@@ -59,6 +59,7 @@ public class ThuocAdapter extends BaseAdapter {
             holder.tvTENTHUOC = (TextView) view.findViewById(R.id.tvTENTHUOC);
             holder.tvDVT = (TextView) view.findViewById(R.id.tvDVT);
             holder.tvDONGIA = (TextView) view.findViewById(R.id.tvDONGIA);
+            holder.imgTHUOC = view.findViewById(R.id.imgTHUOC);
             holder.ivEdit = (ImageView) view.findViewById(R.id.ivEdit);
             holder.ivDelete = (ImageView) view.findViewById(R.id.ivDelete);
             if(i%2!=0){

@@ -106,9 +106,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:onClick="addImg"
+                android:id="@+id/btnAddImg"
+                android:layout_marginRight="20dp"
+                android:text="Thêm Ảnh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
                 android:onClick="add"
                 android:id="@+id/btnAdd"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="20dp"
                 android:text="Add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -118,6 +125,15 @@
                 android:text="Cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgTHUOC"
+            android:layout_width="344dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            />
     </LinearLayout>
 </LinearLayout>

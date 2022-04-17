@@ -7,15 +7,16 @@ public class Thuoc implements Serializable {
     private String TENTHUOC;
     private String DVT;
     private Float DONGIA;
-
+    private byte[] IMGTHUOC;
     public Thuoc() {
     }
 
-    public Thuoc(String MATHUOC, String TENTHUOC, String DVT, Float DONGIA) {
+    public Thuoc(String MATHUOC, String TENTHUOC, String DVT, Float DONGIA, byte[] IMGTHUOC) {
         this.MATHUOC = MATHUOC;
         this.TENTHUOC = TENTHUOC;
         this.DVT = DVT;
         this.DONGIA = DONGIA;
+        this.IMGTHUOC = IMGTHUOC;
     }
 
     public String getMATHUOC() {
@@ -38,6 +39,14 @@ public class Thuoc implements Serializable {
 
     public void setDONGIA(Float DONGIA) { this.DONGIA = DONGIA; }
 
+    public byte[] getIMGTHUOC() {
+        return IMGTHUOC;
+    }
+
+    public void setIMGTHUOC(byte[] IMGTHUOC) {
+        this.IMGTHUOC = IMGTHUOC;
+    }
+
     @Override
     public String toString() {
         return "Thuoc{" +
@@ -45,6 +54,7 @@ public class Thuoc implements Serializable {
                 ", TENTHUOC='" + TENTHUOC + '\'' +
                 ", DVT='" + DVT + '\'' +
                 ", DONGIA='" + DONGIA + '\'' +
+                ", IMGTHUOC='" + IMGTHUOC + '\'' +
                 '}';
     }
 }
