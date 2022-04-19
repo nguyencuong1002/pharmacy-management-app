@@ -14,7 +14,7 @@
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_nha_thuoc.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_edit_thuoc.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_hoa_don.xml" value="0.10989583333333333" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_main.xml" value="0.253125" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.16203703703703703" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/activity_thuoc.xml" value="0.25885416666666666" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_chi_tiet_ban_le.xml" value="0.25885416666666666" />
@@ -22,26 +22,29 @@
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_nha_thuoc.xml" value="0.1814814814814815" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/dong_thuoc.xml" value="0.23425925925925925" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/drawable/button_bg.xml" value="0.1" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/drawable/custom_color_bottom_nav.xml" value="0.1" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/activity_send_otp.xml" value="0.1" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/activity_send_otp.xml" value="0.21888412017167383" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/activity_verify.xml" value="0.25" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/custom_color_bottom_nav.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/dong_thong_tin_ban_le.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/dong_xem_chi_tiet_thong_tin.xml" value="0.253125" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/layout_chi_tiet_ban_le.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/layout_thong_tin_ban_le.xml" value="0.22962962962962963" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/layout_xem_chi_tiet_thong_tin.xml" value="0.264" />
-        <entry key="..\:/GiuaKyQLNT/app/src/main/res/menu/menu_bottom_nav.xml" value="0.25" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/menu/menubar.xml" value="0.25" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.3625" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_add_thuoc.xml" value="0.33" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_chi_tiet_ban_le.xml" value="0.17603850050658562" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_edit_thuoc.xml" value="0.1" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.3625" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/activity_thuoc.xml" value="0.17603850050658562" />
-        <entry key="..\:/Users/Asus/AndroidStudioProjects/GiuaKyQLNT4/app/src/main/res/layout/dong_thuoc.xml" value="0.17603850050658562" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/drawable-v24/ic_baseline_article_24.xml" value="0.1465" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_chi_tiet_ban_le.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_thuoc.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_chi_tiet_ban_le.xml" value="0.21510416666666668" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_chi_tiet_ban_le.xml" value="0.21510416666666668" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_hoa_don.xml" value="0.21510416666666668" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_nha_thuoc.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_thuoc.xml" value="0.1" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_thuoc.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/dong_thuoc.xml" value="0.21510416666666668" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_bg.xml" value="0.144" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_default.xml" value="0.144" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/test.xml" value="0.21927083333333333" />
       </map>
     </option>
   </component>

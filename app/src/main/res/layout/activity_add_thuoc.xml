@@ -8,31 +8,16 @@
     tools:context=".Thuoc.AddThuocActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@drawable/header_bg">
+        style="@style/Header1">
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/back" />
+            style="@style/ImageV1" />
         <TextView
             android:id="@+id/tvThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
             android:layout_marginRight="90dp"
-            android:fontFamily="serif"
             android:text="Thêm Thuốc"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            style="@style/TxtView1"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -46,6 +31,8 @@
             android:layout_height="wrap_content"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
             app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_marginTop="10dp"
@@ -60,13 +47,13 @@
             android:layout_height="wrap_content"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
             app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_marginTop="10dp"
                 android:id="@+id/txtTENTHUOC"
                 android:hint="Nhập Tên Thuốc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/View1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,13 +61,13 @@
             android:layout_height="wrap_content"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
             app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_marginTop="10dp"
                 android:id="@+id/txtDVT"
                 android:hint="Nhập Đơn Vị Tính"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/View1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -88,14 +75,14 @@
             android:layout_height="wrap_content"
             style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
             app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="number"
-                android:layout_marginTop="10dp"
                 android:id="@+id/txtDONGIA"
                 android:hint="Nhập Đơn Giá"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                style="@style/View1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -110,6 +97,7 @@
                 android:id="@+id/btnAddImg"
                 android:layout_marginRight="20dp"
                 android:text="Thêm Ảnh"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <Button
@@ -117,12 +105,14 @@
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="20dp"
                 android:text="Add"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <Button
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

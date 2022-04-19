@@ -1,63 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="8dp"
-android:orientation="horizontal"
-tools:context=".Thuoc.ActivityThuoc">
-<TextView
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:id="@+id/tvMaTHuoc"
-    android:layout_weight="1.2"
-    android:textColor="#21211F"
-    android:text="Mã"
-    android:textSize="14sp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"/>
-<TextView
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:id="@+id/tvTenThuoc"
-    android:layout_weight="3.4"
-    android:textColor="#21211F"
-    android:text="Tên Thuốc"
-    android:textSize="14sp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    tools:context=".Thuoc.ActivityThuoc">
+    <TextView
+        android:id="@+id/tvMaTHuoc"
+        android:layout_weight="1.2"
+        android:text="Mã"
+        style="@style/TxtView5"/>
+    <TextView
+        android:id="@+id/tvTenThuoc"
+        android:layout_weight="3.4"
+        android:text="Tên Thuốc"
+        style="@style/TxtView5"/>
 
-<TextView
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:id="@+id/tvSoLuong"
-    android:layout_weight="1.2"
-    android:textColor="#21211F"
-    android:text="SL"
-    android:textSize="14sp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvSoLuong"
+        android:layout_weight="1.2"
+        android:text="SL"
+        style="@style/TxtView5"/>
 
-<TextView
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:id="@+id/tvDonGia"
-    android:layout_weight="1.8"
-    android:textColor="#21211F"
-    android:text="Đơn giá"
-    android:textSize="14sp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvDonGia"
+        android:layout_weight="1.8"
+        android:text="Đơn giá"
+        style="@style/TxtView5"/>
 
-<TextView
-    android:gravity="center"
-    android:layout_marginTop="5dp"
-    android:id="@+id/tvThanhTien"
-    android:layout_weight="2.4"
-    android:textColor="#21211F"
-    android:text="Thành Tiền"
-    android:textSize="14sp"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvThanhTien"
+        android:layout_weight="2.4"
+        android:text="Thành Tiền"
+        style="@style/TxtView5"/>
 </LinearLayout>

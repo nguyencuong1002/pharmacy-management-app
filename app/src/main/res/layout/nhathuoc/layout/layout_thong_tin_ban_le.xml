@@ -15,26 +15,14 @@
 
         <ImageView
             android:id="@+id/ivBackToBanThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/back" />
+            style="@style/ImageV1"/>
 
 
         <TextView
             android:id="@+id/tvNhaThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
+            style="@style/TxtView1"
             android:layout_marginRight="60dp"
-            android:fontFamily="serif"
-            android:text="Thông Tin Bán Lẻ"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:text="Thông Tin Bán Lẻ" />
     </RelativeLayout>
 
     <LinearLayout
