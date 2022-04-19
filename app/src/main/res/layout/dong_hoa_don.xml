@@ -1,53 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:weightSum="10"
-    android:padding="10dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">>
+    style="@style/LinearLayout2">
     <TextView
-        android:layout_marginTop="8dp"
         android:id="@+id/tvSoHD"
         android:layout_weight="2"
-        android:textColor="#21211F"
         android:text="Số HĐ"
-        android:textSize="14sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        style="@style/TxtView5"/>
     <TextView
-        android:layout_marginTop="8dp"
         android:id="@+id/tvNgayHD"
         android:layout_weight="3.5"
-        android:textColor="#21211F"
         android:text="Ngày Hóa đơn"
-        android:textSize="14sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        style="@style/TxtView5"/>
 
     <TextView
-        android:layout_marginTop="8dp"
         android:id="@+id/tvMaNT"
         android:layout_weight="3.5"
-        android:textColor="#21211F"
         android:text="Mã Nhà Thuốc"
-        android:textSize="14sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        style="@style/TxtView5"/>
 
     <ImageView
         android:id="@+id/ivEdit"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/edit"
-        android:layout_weight="0.5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        style="@style/ImageV5"/>
 
     <ImageView
         android:id="@+id/ivDelete"
-        android:src="@drawable/delete"
-        android:layout_weight="0.5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        style="@style/ImageV4"/>
 
 </LinearLayout>
