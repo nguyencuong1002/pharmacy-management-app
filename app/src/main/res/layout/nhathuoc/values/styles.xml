@@ -109,8 +109,13 @@
         <item name="android:orientation">horizontal</item>
     </style>
     <style name="ButtonCustom" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/button_default</item>
+        <item name="android:background">@drawable/button_default1</item>
     </style>
+    <style name="ButtonCustom1" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_default2</item>
+    </style>
+
+
 
 
 </resources>
