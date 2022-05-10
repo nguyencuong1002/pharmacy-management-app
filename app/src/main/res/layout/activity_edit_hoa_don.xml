@@ -29,21 +29,33 @@
             android:id="@+id/tvSoHD"
             style="@style/TxtView2"/>
 
-        <TextView
-            android:text="Ngày Hóa Đơn"
-            style="@style/TxtView3"/>
-        <EditText
-            android:id="@+id/txtNgayHD"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNgayHD"
+                android:hint="Ngày Hóa Đơn"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:text="Mã NT"
-            style="@style/TxtView3"/>
-        <EditText
-            android:id="@+id/txtMaNT"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtMaNT"
+                android:hint="Mã Nhà Thuốc"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -51,17 +63,19 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="save"
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="50dp"
                 android:text="Save"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
+                style="@style/ButtonCustom1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

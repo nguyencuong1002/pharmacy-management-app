@@ -30,8 +30,9 @@
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/layout_thong_tin_ban_le.xml" value="0.22962962962962963" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/layout/nhathuoc/layout/layout_xem_chi_tiet_thong_tin.xml" value="0.264" />
         <entry key="..\:/GiuaKyQLNT/app/src/main/res/menu/menubar.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/drawable-v24/header_bg.xml" value="0.1555" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/drawable-v24/ic_baseline_article_24.xml" value="0.1465" />
-        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_chi_tiet_ban_le.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_chi_tiet_ban_le.xml" value="0.21927083333333333" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_hoa_don.xml" value="0.21927083333333333" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_nha_thuoc.xml" value="0.21927083333333333" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_add_thuoc.xml" value="0.25" />
@@ -40,10 +41,21 @@
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_hoa_don.xml" value="0.21510416666666668" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_nha_thuoc.xml" value="0.25" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_edit_thuoc.xml" value="0.1" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_hoa_don.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_nha_thuoc.xml" value="0.21927083333333333" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/activity_thuoc.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/dong_chi_tiet_ban_le.xml" value="0.21927083333333333" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/dong_thuoc.xml" value="0.21510416666666668" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_bg.xml" value="0.144" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_default.xml" value="0.144" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_default1.xml" value="0.1555" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_default2.xml" value="0.1555" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/drawable/button_default3.xml" value="0.1555" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/activity_send_otp.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/activity_verify.xml" value="0.25" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/dong_xem_chi_tiet_thong_tin.xml" value="0.21927083333333333" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/layout_thong_tin_ban_le.xml" value="0.1578125" />
+        <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/layout_xem_chi_tiet_thong_tin.xml" value="0.1" />
         <entry key="..\:/andoidtest/GiuaKyQLNT/GiuaKyQLNT2/app/src/main/res/layout/nhathuoc/layout/test.xml" value="0.21927083333333333" />
       </map>
     </option>
@@ -53,5 +65,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.21927083333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

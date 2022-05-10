@@ -30,21 +30,35 @@
             android:id="@+id/tvMaNT"
             style="@style/TxtView2"/>
 
-        <TextView
-            android:text="Tên Nhà Thuốc"
-            style="@style/TxtView3"/>
-        <EditText
-            android:id="@+id/txtTenNT"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtTenNT"
+                android:hint="Tên Nhà Thuốc"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:text="Địa Chỉ"
-            style="@style/TxtView3"/>
-        <EditText
-            android:id="@+id/txtDiaChi"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDiaChi"
+                android:hint="Địa Chỉ"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -52,17 +66,19 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="save"
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="50dp"
                 android:text="Save"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
+                style="@style/ButtonCustom1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

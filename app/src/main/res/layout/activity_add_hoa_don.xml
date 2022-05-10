@@ -74,7 +74,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="add"
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="50dp"
@@ -82,11 +82,11 @@
                 style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
-                style="@style/ButtonCustom"
+                style="@style/ButtonCustom1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
