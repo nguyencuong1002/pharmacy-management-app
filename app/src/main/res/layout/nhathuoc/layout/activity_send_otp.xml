@@ -68,7 +68,8 @@
             <EditText
                 android:id="@+id/inputMobile"
                 android:background="@null"
-                android:hint="964646464"
+                android:inputType="number"
+                android:hint="+84343219012"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:textColor="@color/black"

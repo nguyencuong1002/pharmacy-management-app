@@ -42,7 +42,7 @@ public class ActivitySendOTP extends AppCompatActivity {
                 btnGetOTP.setVisibility(View.INVISIBLE);
 //                "+84" + inputMobile.getText().toString()
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        inputMobile.getText().toString(),
+                        "+84" + inputMobile.getText().toString(),
                         60,
                         TimeUnit.SECONDS,
                         ActivitySendOTP.this,
