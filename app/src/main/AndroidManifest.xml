@@ -12,22 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GiuaKyQLNT">
-<!--        <activity-->
-<!--            android:name=".SendOTP.ActivityVerify"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
-    <!-- Send OPT ACTIVITY -->
-<!--        <activity-->
-<!--            android:name=".SendOTP.ActivitySendOTP"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:windowSoftInputMode="adjustResize"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity
+            android:name=".SendOTP.ActivityVerify"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+<!--     Send OPT ACTIVITY -->
+        <activity
+            android:name=".SendOTP.ActivitySendOTP"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ChiTietThongTin.ActivityXemChiTietThongTin"
             android:exported="false" />
@@ -74,11 +74,11 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
