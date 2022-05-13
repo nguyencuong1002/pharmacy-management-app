@@ -6,21 +6,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
-import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
-import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 
 import java.util.ArrayList;
@@ -33,9 +27,10 @@ public class ActivityThuoc extends AppCompatActivity {
     static final String TENTHUOC_FIELD = "TENTHUOC";
     static final String DVT_FIELD = "DVT";
     static final String DONGIA_FIELD = "DONGIA";
+    static final String IMGTHUOC_FIELD = "IMGTHUOC";
     ThuocAdapter ThuocAdapter;
     ListView lvThuoc;
-    ImageView ivAdd, ivBack;
+    ImageView ivAdd, ivBack, imgTHUOC;
     ArrayList<Thuoc> list = new ArrayList<>();
 
     @Override
@@ -43,9 +38,8 @@ public class ActivityThuoc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thuoc);
         mapping();
-
         myDatabase = new MyDatabase(ActivityThuoc.this, DB_NAME, null, 1);
-        String sql_create_table = "create table if not exists "+TABLE_NAME+" ("+MATHUOC_FIELD+" varchar(10) primary key , "+TENTHUOC_FIELD+" nvarchar(50), "+DVT_FIELD+" nvarchar(50), "+DONGIA_FIELD+" float)";
+        String sql_create_table = "create table if not exists "+TABLE_NAME+" ("+MATHUOC_FIELD+" varchar(10) primary key , "+TENTHUOC_FIELD+" nvarchar(50), "+DVT_FIELD+" nvarchar(50), "+DONGIA_FIELD+" float, "+IMGTHUOC_FIELD+" BLOB)";
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
         loadData();
@@ -89,20 +83,19 @@ public class ActivityThuoc extends AppCompatActivity {
         });
     }
 
-
-
     //Lấy danh sách
     public ArrayList<Thuoc> getAll() {
         ArrayList<Thuoc> list = new ArrayList<>();
         String sql_select = "select * from " + TABLE_NAME;
         Cursor c = myDatabase.SelectData(sql_select);
+        list.clear();
         while (c.moveToNext()) {
             String MATHUOC = c.getString(0);
             String TENTHUOC = c.getString(1);
             String DVT = c.getString(2);
             Float DONGIA = c.getFloat(3);
-
-            Thuoc Thuoc = new Thuoc(MATHUOC, TENTHUOC, DVT, DONGIA);
+            byte[] IMGTHUOC = c.getBlob(4);
+            Thuoc Thuoc = new Thuoc(MATHUOC, TENTHUOC, DVT, DONGIA, IMGTHUOC);
             list.add(Thuoc);
         }
         return list;
@@ -139,5 +132,6 @@ public class ActivityThuoc extends AppCompatActivity {
         lvThuoc = findViewById(R.id.lvThuoc);
         ivAdd = findViewById(R.id.ivAddThuoc);
         ivBack = findViewById(R.id.ivBack);
+        imgTHUOC = findViewById(R.id.imgTHUOC);
     }
 }
