@@ -11,13 +11,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
-
 import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -31,8 +29,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
+import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.MenuItem;
+import android.view.View;
 import java.util.Vector;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityMap extends FragmentActivity implements OnMapReadyCallback {
     GoogleMap mMap;
@@ -44,13 +49,14 @@ public class ActivityMap extends FragmentActivity implements OnMapReadyCallback 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        navigationView = findViewById(R.id.bottom_nav);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        navigationView = findViewById(R.id.bottom_nav);
+
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         //Initialize fused Location
-        client = LocationServices.getFusedLocationProviderClient( this);
+        client = LocationServices.getFusedLocationProviderClient(this);
         //maker
         makerOptions = new Vector<>();
         makerOptions.add(new MarkerOptions().title("Nhà Thuốc 1")
@@ -73,31 +79,48 @@ public class ActivityMap extends FragmentActivity implements OnMapReadyCallback 
                 .position(new LatLng(10.84823919283536, 106.76323353864443))
                 .snippet("Mở từ 7AM-12PM")
         );
+//        navigationView.setOnNavigationItemSelectedListener();
 
-/*        navigationView.setSelectedItemId(R.id.action_map);*/
-//        Bottom Navigation
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.action_home:
-                        startActivity(new Intent(ActivityMap.this, MainActivity.class));
-                        break;
+        //navigationView.setSelectedItemId(R.id.action_map);
+        navigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.action_home:
+                    startActivity(new Intent(ActivityMap.this, MainActivity.class));
+                    break;
+                case R.id.action_map:
+                    return true;
+                case R.id.action_chart:
+                    startActivity(new Intent(ActivityMap.this, ActivityThongTinBanLe.class));
+                    break;
 
-                    case R.id.action_map:
-                        return true;
-
-                    case R.id.action_chart:
-                        startActivity(new Intent(ActivityMap.this, ActivityThongTinBanLe.class));
-                        break;
-
-                    case R.id.action_setting:
-                        startActivity(new Intent(ActivityMap.this, ActivityThuoc.class));
-                        break;
-                }
-                return true;
+                case R.id.action_setting:
+                    startActivity(new Intent(ActivityMap.this, ActivityThuoc.class));
+                    break;
             }
+            return true;
         });
+////        Bottom Navigation
+//        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                switch (item.getItemId()){
+//                    case R.id.action_home:
+//                        startActivity(new Intent(ActivityMap.this, MainActivity.class));
+//                        break;
+//                    case R.id.action_map:
+//                        return true;
+//                    case R.id.action_chart:
+//                        startActivity(new Intent(ActivityMap.this, ActivityThongTinBanLe.class));
+//                        break;
+//
+//                    case R.id.action_setting:
+//                        startActivity(new Intent(ActivityMap.this, ActivityThuoc.class));
+//                        break;
+//                }
+//                return true;
+//            }
+//        });
+
     }
 
 
@@ -113,12 +136,13 @@ public class ActivityMap extends FragmentActivity implements OnMapReadyCallback 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng1, 15));*/
         // bật zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        LatLng latLng1 = new LatLng(10.860265685752669, 106.78193899698404);
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng1, 15));
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         Location location = getMyLocation();
-        if (location != null)
-        {
+        if (location != null) {
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
@@ -133,7 +157,7 @@ public class ActivityMap extends FragmentActivity implements OnMapReadyCallback 
     @SuppressLint("MissingPermission")
     private Location getMyLocation() {
         // Get location from GPS if it's available
-        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         @SuppressLint("MissingPermission") Location myLocation = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         // Location wasn't found, check the next most accurate place for the current location
         if (myLocation == null) {
@@ -160,5 +184,4 @@ public class ActivityMap extends FragmentActivity implements OnMapReadyCallback 
             }
         }
     }
-
 }

@@ -9,17 +9,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.giuakyqlnt.R;
-
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ThuocAdapter extends BaseAdapter {
 
     public ActivityThuoc context;
     private int layout;
     List<Thuoc> listThuoc;
+    ArrayList<Thuoc> list = new ArrayList<>();
 
     public ThuocAdapter(ActivityThuoc context, int layout, List<Thuoc> listThuoc) {
         this.context = context;
@@ -93,4 +94,5 @@ public class ThuocAdapter extends BaseAdapter {
         });
         return view;
     }
+
 }

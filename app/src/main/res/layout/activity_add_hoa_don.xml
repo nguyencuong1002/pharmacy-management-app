@@ -50,7 +50,8 @@
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNgayHD"
-                android:hint="Nhập Ngày Hóa Đơn"
+                android:text="Nhập Ngày Hóa Đơn"
+                android:onClick="pickdate"
                 style="@style/View1"/>
         </com.google.android.material.textfield.TextInputLayout>
 

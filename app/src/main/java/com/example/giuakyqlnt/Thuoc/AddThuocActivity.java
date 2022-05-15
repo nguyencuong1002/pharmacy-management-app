@@ -1,13 +1,18 @@
 package com.example.giuakyqlnt.Thuoc;
+import static com.example.giuakyqlnt.Thuoc.ActivityThuoc.MATHUOC_FIELD;
+import static com.example.giuakyqlnt.Thuoc.ActivityThuoc.TENTHUOC_FIELD;
 import android.Manifest;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +20,21 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
 
 public class AddThuocActivity extends AppCompatActivity {
     ActivityThuoc Thuoc;
@@ -35,6 +49,8 @@ public class AddThuocActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_thuoc);
         mapping();
         setEvent();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
     }
 
     public void add(View view){
@@ -46,7 +62,7 @@ public class AddThuocActivity extends AppCompatActivity {
         if (isAllFieldsChecked){
             //Add dữ liệu
             ContentValues values = new ContentValues();
-            values.put(ActivityThuoc.MATHUOC_FIELD, MATHUOC);
+            values.put(MATHUOC_FIELD, MATHUOC);
             values.put(ActivityThuoc.TENTHUOC_FIELD, TENTHUOC);
             values.put(ActivityThuoc.DVT_FIELD, DVT);
             Float DONGIA = Float.parseFloat(txtDONGIA.getText().toString());
@@ -55,8 +71,42 @@ public class AddThuocActivity extends AppCompatActivity {
             values.put(ActivityThuoc.IMGTHUOC_FIELD, IMGTHUOC);
             ActivityThuoc.myDatabase.insert(ActivityThuoc.TABLE_NAME, null,values);
             startActivity(new Intent(AddThuocActivity.this, ActivityThuoc.class));
+            //gửi mail thông báo
+            String host = "smtp.gmail.com";
+            final String username = "sytruong61@gmail.com";
+            final String password = "mywghdzgzuznmnbv";
+            String messageToSend = "Có một loại thuốc vừa được thêm mới. Mã thuốc: " + MATHUOC + ", tên thuốc: " + TENTHUOC ;
+            Properties props = new Properties();
+            props.setProperty("mail.transport.protocol", "smtp");
+            props.setProperty("mail.host", host);
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.port", "465");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.socketFactory.class",
+                    "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.socketFactory.fallback", "false");
+            props.setProperty("mail.smtp.quitwait", "false");
+            Session session = Session.getInstance(props,
+                    new javax.mail.Authenticator() {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(username, password);
+                        }
+                    });
+            try{
+                Message message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(username));
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("sytruong18112000@gmail.com"));
+                message.setSubject("Thông Báo");
+                message.setText(messageToSend);
+                Transport.send(message);
+                Toast.makeText(getApplicationContext (), "Email send successfully", Toast. LENGTH_LONG). show();
+            }catch (MessagingException e){
+                Toast.makeText(getApplicationContext (), e.getMessage().toString(), Toast. LENGTH_LONG). show();
+            }
         }
     }
+
     public void addImg(View view){
        ActivityCompat.requestPermissions(
                 AddThuocActivity.this,
@@ -109,7 +159,7 @@ public class AddThuocActivity extends AppCompatActivity {
         } else if (!txtMATHUOC.getText().toString().matches("[a-zA-Z0-9]+")) {
             txtMATHUOC.setError("Vui lòng chỉ nhập kí tự chữ hoặc số!");
             return false;
-        }else if(Thuoc.myDatabase.checkExistID(Thuoc.TABLE_NAME, Thuoc.MATHUOC_FIELD, txtMATHUOC.getText().toString())){
+        }else if(Thuoc.myDatabase.checkExistID(Thuoc.TABLE_NAME, MATHUOC_FIELD, txtMATHUOC.getText().toString())){
             txtMATHUOC.setError("Mã nhà thuốc đã tồn tại!");
             return false;
         }

@@ -31,7 +31,7 @@ public class EditThuocActivity extends AppCompatActivity {
     TextView tvMATHUOC;
     EditText txtTENTHUOC, txtDVT, txtDONGIA;
     Button btnAdd, btnCancel;
-    ImageView imgTHUOC;
+    ImageView ivBack, imgTHUOC;
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -40,6 +40,7 @@ public class EditThuocActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_thuoc);
         mapping();
         getData();
+        setEvent();
     }
 
     public void getData(){
@@ -110,6 +111,15 @@ public class EditThuocActivity extends AppCompatActivity {
         startActivity(new Intent(EditThuocActivity.this, ActivityThuoc.class));
     }
 
+    public void setEvent(){
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EditThuocActivity.this, ActivityThuoc.class));
+            }
+        });
+    }
+
     private void mapping(){
         tvMATHUOC = findViewById(R.id.tvMATHUOC);
         txtTENTHUOC = findViewById(R.id.txtTENTHUOC);
@@ -118,6 +128,7 @@ public class EditThuocActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
         imgTHUOC = findViewById(R.id.imgTHUOC);
+        ivBack = findViewById(R.id.ivBack);
 
     }
 

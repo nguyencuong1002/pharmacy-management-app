@@ -26,7 +26,6 @@
             android:text="Nhà Thuốc"
             style="@style/TxtView1" />
     </RelativeLayout>
-
     <LinearLayout
         style="@style/LinearLayout1">
         <TextView

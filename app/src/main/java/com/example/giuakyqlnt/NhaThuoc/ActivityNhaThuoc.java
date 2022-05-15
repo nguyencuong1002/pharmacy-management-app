@@ -13,10 +13,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.giuakyqlnt.ActivityMap;
 import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
 import com.example.giuakyqlnt.R;
@@ -35,6 +37,8 @@ public class ActivityNhaThuoc extends AppCompatActivity {
     ListView lvNhaThuoc;
     ImageView ivAdd, ivBack;
     ArrayList<NhaThuoc> list = new ArrayList<>();
+    Button btnMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

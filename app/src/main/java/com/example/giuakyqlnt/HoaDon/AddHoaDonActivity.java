@@ -2,11 +2,13 @@ package com.example.giuakyqlnt.HoaDon;
 
 import static com.example.giuakyqlnt.R.id.btnCancel;
 
+import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -15,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AddHoaDonActivity extends AppCompatActivity {
     ActivityHoaDon HD;
@@ -81,6 +86,24 @@ public class AddHoaDonActivity extends AppCompatActivity {
                 startActivity(new Intent(AddHoaDonActivity.this, ActivityHoaDon.class));
             }
         });
+    }
+    public void pickdate(View button) {
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        int mYear = c.get(Calendar.YEAR);
+        int mMonth = c.get(Calendar.MONTH);
+        int mDay = c.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        c.set (year, monthOfYear, dayOfMonth);
+                        SimpleDateFormat simpleDateFormat =new SimpleDateFormat ("dd/MM/yyyy");
+                        txtNgayHD.setText(simpleDateFormat.format(c.getTime ()));
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
     private void mapping(){

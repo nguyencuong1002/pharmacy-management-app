@@ -4,6 +4,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
@@ -13,25 +15,32 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.GiuaKyQLNT">
-<!--        <activity-->
-<!--            android:name=".SendOTP.ActivityVerify"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
-<!--&lt;!&ndash;     Send OPT ACTIVITY &ndash;&gt;-->
-<!--        <activity-->
-<!--            android:name=".SendOTP.ActivitySendOTP"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:windowSoftInputMode="adjustResize"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".LoginRegister.ActivityProfile"-->
-<!--            android:exported="false" />-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBqoztwQ2Xh-9s_kq0xVbKNS68wE3s8uyI" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:exported = "true"
+            />
+        <activity
+            android:name=".SendOTP.ActivityVerify"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+<!--     Send OPT ACTIVITY -->
+        <activity
+            android:name=".SendOTP.ActivitySendOTP"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <!--<activity
+            android:name=".LoginRegister.ActivityProfile"
+            android:exported="false" />-->
         <activity
             android:name=".LoginRegister.ActivityLogin"
             android:exported="true">
@@ -99,12 +108,14 @@
             android:name=".ChiTietBanLe.ActivityChiTietBanLe"
             android:exported="false" />
         <activity
+            android:name=".ActivityMap"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
-
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>

@@ -6,23 +6,21 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
-import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
-import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
-public class ActivityThuoc extends AppCompatActivity {
+
+public class ActivityThuoc extends AppCompatActivity implements SearchView.OnQueryTextListener {
     public static MyDatabase myDatabase;
     public static final String DB_NAME = "qlnhathuoc.sqlite";
     public static final String TABLE_NAME = "tbl_Thuoc";
@@ -34,8 +32,9 @@ public class ActivityThuoc extends AppCompatActivity {
     ThuocAdapter ThuocAdapter;
     ListView lvThuoc;
     ImageView ivAdd, ivBack, imgTHUOC;
+    SearchView editsearch;
     ArrayList<Thuoc> list = new ArrayList<>();
-
+    List<Thuoc> thuocList = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +44,8 @@ public class ActivityThuoc extends AppCompatActivity {
         String sql_create_table = "create table if not exists "+TABLE_NAME+" ("+MATHUOC_FIELD+" varchar(10) primary key , "+TENTHUOC_FIELD+" nvarchar(50), "+DVT_FIELD+" nvarchar(50), "+DONGIA_FIELD+" float, "+IMGTHUOC_FIELD+" BLOB)";
         //Tạo bảng
         myDatabase.ExecuteSQL(sql_create_table);
+        // Locate the EditText in listview_main.xml
+        editsearch.setOnQueryTextListener(this);
         loadData();
         setEvent();
     }
@@ -86,8 +87,6 @@ public class ActivityThuoc extends AppCompatActivity {
         });
     }
 
-
-
     //Lấy danh sách
     public ArrayList<Thuoc> getAll() {
         ArrayList<Thuoc> list = new ArrayList<>();
@@ -105,6 +104,8 @@ public class ActivityThuoc extends AppCompatActivity {
         }
         return list;
     }
+
+
 
     //Show dialog Xóa Dữ liệu
     public void DialogXoaCV(String TENTHUOC, String MATHUOC) {
@@ -132,11 +133,43 @@ public class ActivityThuoc extends AppCompatActivity {
         dialogXoa.show();
     }
 
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        list.clear();
+        if (charText.length() == 0) {
+            list = getAll();
+            ThuocAdapter = new ThuocAdapter(ActivityThuoc.this, R.layout.dong_thuoc, list);
+            lvThuoc.setAdapter(ThuocAdapter);
+        } else {
+            thuocList = getAll();
+            for (Thuoc wp : thuocList) {
+                if (wp.getTENTHUOC().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    list.add(wp);
+                    ThuocAdapter = new ThuocAdapter(ActivityThuoc.this, R.layout.dong_thuoc, list);
+                    lvThuoc.setAdapter(ThuocAdapter);
+                }
+            }
+        }
+        ThuocAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String text = newText;
+        filter(text);
+        return false;
+    }
 
     private void mapping() {
         lvThuoc = findViewById(R.id.lvThuoc);
         ivAdd = findViewById(R.id.ivAddThuoc);
         ivBack = findViewById(R.id.ivBack);
         imgTHUOC = findViewById(R.id.imgTHUOC);
+        editsearch = findViewById(R.id.search);
     }
 }

@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.action_map:
-//                        startActivity(new Intent(MainActivity.this, ActivityThongTinBanLe.class));
+                        startActivity(new Intent(MainActivity.this, ActivityMap.class));
                         break;
 
                     case R.id.action_chart:

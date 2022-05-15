@@ -25,7 +25,14 @@
             android:text="Thuốc"
             style="@style/TxtView1" />
     </RelativeLayout>
-
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:queryHint="Tìm kiếm"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false">
+        <requestFocus />
+    </SearchView>
     <LinearLayout
         style="@style/LinearLayout1">
         <TextView

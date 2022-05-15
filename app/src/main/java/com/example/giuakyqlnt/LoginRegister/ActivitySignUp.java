@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -17,16 +18,8 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class ActivitySignUp extends AppCompatActivity {
 
     EditText txtMaNT, txtTenNT, txtPassword, txtDiaChi;
-    Button btnSignUp, btnToLogin;
-//
-//    SharedPreferences sharedPreferences;
-//
-//    private static final String SHARED_PREF_NAME = "mypref";
-//    private static final String KEY_MA_NT = "MaNT";
-//    private static final String KEY_TEN_NT = "TenNT";
-//    private static final String KEY_PASSWORD = "TenNT";
-//    private static final String KEY_DIACHI = "DiaChi";
-
+    Button btnSignUp;
+    Button btnLogin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,15 +27,7 @@ public class ActivitySignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         mapping();
 
-//        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
-//
-//        String maNhaThuoc = sharedPreferences.getString(KEY_MA_NT, null);
-////        if(maNhaThuoc != null){
-////            startActivity(new Intent(ActivitySignUp.this, ActivityLogin.class));
-////        }
-
-
-        btnToLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ActivityLogin.class));
@@ -58,16 +43,6 @@ public class ActivitySignUp extends AppCompatActivity {
                 tenNT = String.valueOf(txtTenNT.getText());
                 Password = String.valueOf(txtPassword.getText());
                 diaChi = String.valueOf(txtDiaChi.getText());
-
-//                Share preferences
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-//
-//                editor.putString(KEY_MA_NT, maNT);
-//                editor.putString(KEY_TEN_NT, tenNT);
-//                editor.putString(KEY_PASSWORD, Password);
-//                editor.putString(KEY_DIACHI, diaChi);
-//
-//                editor.apply();
 
                 if(!maNT.equals("") && !tenNT.equals("") && !Password.equals("") && !diaChi.equals("")){
                     //Start Processcing First
@@ -90,7 +65,6 @@ public class ActivitySignUp extends AppCompatActivity {
                             data[3] = diaChi;
 
                             PutData putData = new PutData(Constaint.URL_REGISTER, "POST", field, data);
-
                             if(putData.startPut()){
                                 if(putData.onComplete()){
                                     String result = putData.getResult();
@@ -104,8 +78,6 @@ public class ActivitySignUp extends AppCompatActivity {
                                     }
                                 }
                             }
-
-//                            RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(putData.);
                         }
                     });
                 }else{
@@ -121,6 +93,6 @@ public class ActivitySignUp extends AppCompatActivity {
         txtPassword = findViewById(R.id.txtPassword);
         txtDiaChi = findViewById(R.id.txtDiaChi);
         btnSignUp = findViewById(R.id.btnSignUp);
-        btnToLogin = findViewById(R.id.btnToLogin);
+        btnLogin = findViewById(R.id.btnToLogin);
     }
 }

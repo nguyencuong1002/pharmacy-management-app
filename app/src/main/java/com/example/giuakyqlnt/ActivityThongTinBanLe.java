@@ -135,7 +135,7 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
                         break;
 
                     case R.id.action_map:
-//                        startActivity(new Intent(ActivityThongTinBanLe.this, MainActivity.class));
+                        startActivity(new Intent(ActivityThongTinBanLe.this, ActivityMap.class));
                         break;
 
                     case R.id.action_chart:
