@@ -1,20 +1,23 @@
 package com.example.giuakyqlnt;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
+import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
 import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
-import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     CardView cvNhaThuoc, cvThuoc, cvHoaDon, cvBanThuoc;
+    BottomNavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        navigationView.setSelectedItemId(R.id.action_home);
+//        Bottom Navigation
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_home:
+                        return true;
+
+                    case R.id.action_map:
+//                        startActivity(new Intent(MainActivity.this, ActivityThongTinBanLe.class));
+                        break;
+
+                    case R.id.action_chart:
+                        startActivity(new Intent(MainActivity.this, ActivityThongTinBanLe.class));
+                        break;
+
+                    case R.id.action_setting:
+                        startActivity(new Intent(MainActivity.this, ActivityThuoc.class));
+                        break;
+                }
+                return true;
+            }
+        });
+
     }
 
     public void mapping(){
@@ -53,5 +81,6 @@ public class MainActivity extends AppCompatActivity {
         cvThuoc = findViewById(R.id.cvThuoc);
         cvHoaDon = findViewById(R.id.cvHoaDon);
         cvBanThuoc = findViewById(R.id.cvBanThuoc);
+        navigationView = findViewById(R.id.bottom_nav);
     }
 }
