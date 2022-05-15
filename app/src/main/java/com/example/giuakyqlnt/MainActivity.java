@@ -15,6 +15,8 @@ import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
 import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+//import com.example.giuakyqlnt.LoginRegister.ActivityProfile;
+
 public class MainActivity extends AppCompatActivity {
     CardView cvNhaThuoc, cvThuoc, cvHoaDon, cvBanThuoc;
     BottomNavigationView navigationView;
@@ -73,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     public void mapping(){

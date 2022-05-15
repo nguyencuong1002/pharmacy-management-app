@@ -5,90 +5,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#fff"
+    android:padding="20dp"
     tools:context=".LoginRegister.ActivityLogin">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@drawable/header_bg">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="60dp"
-            android:fontFamily="serif"
-            android:text="Đăng Nhập"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:transitionName="logo_image"/>
+
+    <TextView
+        android:id="@+id/logo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Hello, Welcome Pharmacity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:transitionName="logo_text" />
+    <TextView
+        android:id="@+id/slogan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In to continue"
+        android:fontFamily="serif"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:transitionName="logo_desc"/>
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
-            app:boxStrokeColor="@color/text"
-            android:textColorHint="@color/black">
+            android:id="@+id/username"
+            android:hint="Username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_marginTop="10dp"
                 android:id="@+id/txtMaNT"
-                android:hint="Nhập Mã Nhà Thuốc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:transitionName="logo_text"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
-            app:boxStrokeColor="@color/text"
-            android:textColorHint="@color/black">
+            android:id="@+id/password"
+            android:hint="Password"
+            app:passwordToggleEnabled="true"
+            android:transitionName="password_tran"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_marginTop="10dp"
                 android:id="@+id/txtPassword"
-                android:hint="Nhập Password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:transitionName="password_tran"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btnLogin"
-                android:text="Đăng Nhập"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
         <TextView
-            android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
-            android:id="@+id/tvSignUp"
-            android:text="Đăng Ký"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
             android:id="@+id/tvOTP"
-            android:text="Gửi mã OTP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="Gửi mã OTP !"
+            android:layout_gravity="right"
+            android:textSize="18sp"
+            android:elevation="0dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/Login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng Nhập"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:transitionName="button_tran"/>
+
+        <Button
+            android:id="@+id/signup_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="Chưa có tài khoản? Đăng Ký"
+            android:layout_gravity="right"
+            android:elevation="0dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/colorPrimary"
+            android:transitionName="login_signup_tran"/>
+
     </LinearLayout>
+
 </LinearLayout>
