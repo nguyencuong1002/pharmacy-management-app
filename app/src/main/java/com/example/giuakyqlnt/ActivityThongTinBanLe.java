@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anychart.AnyChart;
@@ -23,6 +25,8 @@ import com.anychart.enums.Position;
 import com.anychart.enums.TooltipPositionMode;
 import com.example.giuakyqlnt.ChiTietBanLe.ActivityChiTietBanLe;
 import com.example.giuakyqlnt.ChiTietThongTin.ActivityXemChiTietThongTin;
+import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +39,8 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
     ThongTinBanLeAdapter thongTinBanLeAdapter;
     ListView lvTTBL;
     ImageView ivBack;
+
+    BottomNavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,7 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
         }
 //        setEvent();
         chartView();
+
     }
 
     public void loadData(){
@@ -114,6 +121,31 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ActivityThongTinBanLe.this, ActivityChiTietBanLe.class));
+            }
+        });
+
+        //Event Navigation bottom
+        navigationView.setSelectedItemId(R.id.action_chart);
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_home:
+                        startActivity(new Intent(ActivityThongTinBanLe.this, MainActivity.class));
+                        break;
+
+                    case R.id.action_map:
+//                        startActivity(new Intent(ActivityThongTinBanLe.this, MainActivity.class));
+                        break;
+
+                    case R.id.action_chart:
+                        return true;
+
+                    case R.id.action_setting:
+                        startActivity(new Intent(ActivityThongTinBanLe.this, ActivityThuoc.class));
+                        break;
+                }
+                return true;
             }
         });
     }
@@ -185,5 +217,6 @@ public class ActivityThongTinBanLe extends AppCompatActivity {
     private void mapping() {
         lvTTBL = findViewById(R.id.lvThongTinBanLe);
         ivBack = findViewById(R.id.ivBackToBanThuoc);
+        navigationView = findViewById(R.id.bottom_nav);
     }
 }

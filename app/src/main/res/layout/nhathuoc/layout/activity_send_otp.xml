@@ -65,11 +65,21 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="+84-"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
             <EditText
                 android:id="@+id/inputMobile"
                 android:background="@null"
                 android:inputType="number"
-                android:hint="+84343219012"
+                android:hint="343219012"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:textColor="@color/black"
