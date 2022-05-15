@@ -7,33 +7,17 @@
     android:orientation="vertical"
     tools:context=".ChiTietThongTin.ActivityXemChiTietThongTin">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@drawable/header_bg">
+    <RelativeLayout style="@style/Header1">
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/back" />
+            style="@style/ImageV1" />
 
         <TextView
             android:id="@+id/tvThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
+            style="@style/TxtView1"
             android:layout_marginRight="90dp"
-            android:fontFamily="serif"
-            android:text="Chi Tiết Bán Lẻ"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:text="Chi Tiết Bán Lẻ" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -238,6 +222,7 @@
         android:id="@+id/btnGenerate"
         android:text="Export File PDF"
         android:fontFamily="serif"
+        style="@style/ButtonCustom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 <!--    <LinearLayout-->

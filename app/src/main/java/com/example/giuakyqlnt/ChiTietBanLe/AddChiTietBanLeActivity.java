@@ -14,22 +14,30 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 
 import com.example.giuakyqlnt.HoaDon.ActivityHoaDon;
+import com.example.giuakyqlnt.MyDatabase;
 import com.example.giuakyqlnt.R;
 import com.example.giuakyqlnt.Thuoc.ActivityThuoc;
+import com.example.giuakyqlnt.Thuoc.Thuoc;
 
-import com.example.giuakyqlnt.R;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AddChiTietBanLeActivity extends AppCompatActivity {
+    public static MyDatabase myDatabase;
     EditText txtSOHD, txtMATHUOC, txtSOLUONG;
     Button btnAdd, btnCancel;
     ImageView ivBack;
@@ -151,7 +159,6 @@ public class AddChiTietBanLeActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
         ivBack = findViewById(R.id.ivBack);
-
     }
 
 

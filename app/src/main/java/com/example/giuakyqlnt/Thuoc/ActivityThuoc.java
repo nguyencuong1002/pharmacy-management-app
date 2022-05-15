@@ -6,17 +6,20 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.giuakyqlnt.MainActivity;
 import com.example.giuakyqlnt.MyDatabase;
+import com.example.giuakyqlnt.NhaThuoc.ActivityNhaThuoc;
+import com.example.giuakyqlnt.NhaThuoc.AddNhaThuocActivity;
 import com.example.giuakyqlnt.R;
-
 import java.util.ArrayList;
 
 public class ActivityThuoc extends AppCompatActivity {
@@ -82,6 +85,8 @@ public class ActivityThuoc extends AppCompatActivity {
             }
         });
     }
+
+
 
     //Lấy danh sách
     public ArrayList<Thuoc> getAll() {

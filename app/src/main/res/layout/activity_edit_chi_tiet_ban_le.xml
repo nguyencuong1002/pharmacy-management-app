@@ -8,30 +8,15 @@
     tools:context=".ChiTietBanLe.EditChiTietBanLeActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@drawable/header_bg">
+        style="@style/Header1">
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/back" />
+            style="@style/ImageV1"/>
         <TextView
             android:id="@+id/tvNhaThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
             android:layout_marginRight="100dp"
-            android:fontFamily="serif"
             android:text="Sửa Bán Lẻ"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            style="@style/TxtView1"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -43,34 +28,25 @@
 
         <TextView
             android:id="@+id/tvSOHD"
-            android:padding="10dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:text="SoHD"
+            style="@style/TxtView2"/>
         <TextView
             android:id="@+id/tvMATHUOC"
-            android:padding="10dp"
-            android:textSize="20sp"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="Số lượng"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/txtSOLUONG"
+            android:text="MaThuoc"
+            style="@style/TxtView2"/>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSOLUONG"
+                android:hint="Số Lượng"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -78,17 +54,19 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="save"
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="50dp"
                 android:text="Save"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
+                style="@style/ButtonCustom1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

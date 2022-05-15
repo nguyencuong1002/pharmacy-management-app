@@ -8,30 +8,15 @@
     tools:context=".HoaDon.EditHoaDonActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:background="@drawable/header_bg">
+        style="@style/Header1">
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/back" />
+            style="@style/ImageV1"/>
         <TextView
             android:id="@+id/tvNhaThuoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
             android:layout_marginRight="80dp"
-            android:fontFamily="serif"
             android:text="Sửa Hóa Đơn"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            style="@style/TxtView1"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -42,38 +27,35 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/tvSoHD"
-            android:padding="10dp"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            style="@style/TxtView2"/>
 
-        <TextView
-            android:text="Ngày Hóa Đơn"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/text"
-            android:textSize="15sp"
-            android:textStyle="bold"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/txtNgayHD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNgayHD"
+                android:hint="Ngày Hóa Đơn"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:text="Mã NT"
-            android:layout_marginTop="5dp"
-            android:textSize="15sp"
-            android:textColor="@color/text"
-            android:textStyle="bold"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/txtMaNT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style='@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox'
+            app:boxStrokeColor="@color/text"
+            app:startIconDrawable="@drawable/ic_baseline_article_24"
+            app:endIconMode="clear_text"
+            android:textColorHint="@color/black">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtMaNT"
+                android:hint="Mã Nhà Thuốc"
+                style="@style/View1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -81,17 +63,19 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="save"
                 android:id="@+id/btnAdd"
                 android:layout_marginRight="50dp"
                 android:text="Save"
+                style="@style/ButtonCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:onClick="cancle"
                 android:id="@+id/btnCancel"
                 android:text="Cancel"
+                style="@style/ButtonCustom1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
